@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lava_tileset_orake.png-3437c7dc77ca27c1a3c1fd5e9fe8deb1.stex"
+path="res://.import/geyser_anim.png-bec2ffce73e7f46d82bf0209b3a9334b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiles2/lava_tileset_orake.png"
-dest_files=[ "res://.import/lava_tileset_orake.png-3437c7dc77ca27c1a3c1fd5e9fe8deb1.stex" ]
+source_file="res://assets/tiles/geyser_anim.png"
+dest_files=[ "res://.import/geyser_anim.png-bec2ffce73e7f46d82bf0209b3a9334b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

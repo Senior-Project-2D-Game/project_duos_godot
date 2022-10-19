@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ice.png-6734ee5830e52a5a01d49a39a556df12.stex"
+path="res://.import/ice.png-12dc3d35ffa345bc6c5e5fcdcbb71ce4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiles2/ice.png"
-dest_files=[ "res://.import/ice.png-6734ee5830e52a5a01d49a39a556df12.stex" ]
+source_file="res://assets/tiles/ice.png"
+dest_files=[ "res://.import/ice.png-12dc3d35ffa345bc6c5e5fcdcbb71ce4.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
