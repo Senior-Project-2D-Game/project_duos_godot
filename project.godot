@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="project_duos"
-run/main_scene="res://scenes/scene1.tscn"
+run/main_scene="res://player/Player.tscn"
 config/icon="res://icon.png"
 
 [autoload]

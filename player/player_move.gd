@@ -22,6 +22,9 @@ func _physics_process(delta):
 			velocity.x = WALK_SPEED 
 		else:
 			velocity.x = -WALK_SPEED 
+		
+		if is_on_wall():
+			velocity.x = -velocity.x 
 	else:
 		if Input.is_action_pressed("left"):
 			velocity.x = -WALK_SPEED
@@ -33,8 +36,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_FORCE
 	
-	if is_on_wall():
-		velocity.x = -velocity.x 
+
 
 	move_and_slide(velocity, Vector2(0, -1))
 
