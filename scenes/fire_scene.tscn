@@ -257,7 +257,7 @@ extents = Vector2( 68, 4 )
 extents = Vector2( 20, 4 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 116, 4 )
+extents = Vector2( 112, 4 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10, 69.0007 )
@@ -372,7 +372,7 @@ __meta__ = {
 position = Vector2( -1, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 33 )
-frame = 1
+frame = 14
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Launcher"]
@@ -386,7 +386,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 33 )
-frame = 19
+frame = 10
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Launcher"]
@@ -400,7 +400,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 33 )
-frame = 8
+frame = 21
 playing = true
 
 [node name="Ice" type="Area2D" parent="."]
@@ -430,7 +430,7 @@ position = Vector2( 1108, -4 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Ice"]
-position = Vector2( 1388, -4 )
+position = Vector2( 1384, -4 )
 shape = SubResource( 7 )
 
 [node name="Walls" type="Area2D" parent="."]
