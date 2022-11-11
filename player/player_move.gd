@@ -59,3 +59,7 @@ func _on_ice_entered(body_rid, body, body_shape_index, local_shape_index):
 
 func _on_ice_exited(body_rid, body, body_shape_index, local_shape_index):
 	player_state = "normal"
+
+
+func _on_Area2D_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	pass # Replace with function body.
