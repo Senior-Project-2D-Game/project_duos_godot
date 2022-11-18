@@ -7,6 +7,7 @@ const JUMP_FORCE = -300
 
 var player_state = "normal"
 var velocity = Vector2()
+export var controls : Resource = null
 
 func _physics_process(delta):
 	if is_on_floor():
@@ -26,14 +27,14 @@ func _physics_process(delta):
 		if is_on_wall():
 			velocity.x = -velocity.x 
 	else:
-		if Input.is_action_pressed("left"):
+		if Input.is_action_pressed(controls.move_left):
 			velocity.x = -WALK_SPEED
-		elif Input.is_action_pressed("right"):
+		elif Input.is_action_pressed(controls.move_right):
 			velocity.x =  WALK_SPEED
 		else:
 			velocity.x = 0
 		
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_just_pressed(controls.jump) and is_on_floor():
 			velocity.y = JUMP_FORCE
 	
 
