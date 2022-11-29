@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/geyser-Sheet.png-1c65213f1e4cda62daf6b352b0ab524b.stex"
+path="res://.import/ice_char1_walk.png-ae3768e3f9b7a2ef269c2ff615342b1f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/geyser-Sheet.png"
-dest_files=[ "res://.import/geyser-Sheet.png-1c65213f1e4cda62daf6b352b0ab524b.stex" ]
+source_file="res://assets/animations/ice_char1_walk.png"
+dest_files=[ "res://.import/ice_char1_walk.png-ae3768e3f9b7a2ef269c2ff615342b1f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

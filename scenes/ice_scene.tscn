@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/tiles/mountains2.png" type="Texture" id=6]
 [ext_resource path="res://assets/tiles/mountBottom.png" type="Texture" id=7]
 [ext_resource path="res://assets/tiles/fback2.png" type="Texture" id=8]
-[ext_resource path="res://assets/tiles/geyser-Sheet.png" type="Texture" id=9]
+[ext_resource path="res://assets/animations/geyser-Sheet.png" type="Texture" id=9]
 [ext_resource path="res://assets/tiles/placeholder.png" type="Texture" id=10]
 [ext_resource path="res://assets/tiles/checkpoint.png" type="Texture" id=11]
 [ext_resource path="res://assets/tiles/skytop3.png" type="Texture" id=12]
@@ -18,6 +18,7 @@
 [ext_resource path="res://assets/tiles/ice_mountains.png" type="Texture" id=16]
 [ext_resource path="res://assets/tiles/ice_char1.png" type="Texture" id=17]
 [ext_resource path="res://player/player_2_controls.tres" type="Resource" id=18]
+
 
 [sub_resource type="TileSet" id=9]
 0/name = "fback2.png 0"

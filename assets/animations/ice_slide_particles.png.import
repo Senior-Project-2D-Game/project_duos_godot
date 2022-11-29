@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/geyser_anim.png-bec2ffce73e7f46d82bf0209b3a9334b.stex"
+path="res://.import/ice_slide_particles.png-26d06f815866032cc763614a1b056cab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/geyser_anim.png"
-dest_files=[ "res://.import/geyser_anim.png-bec2ffce73e7f46d82bf0209b3a9334b.stex" ]
+source_file="res://assets/animations/ice_slide_particles.png"
+dest_files=[ "res://.import/ice_slide_particles.png-26d06f815866032cc763614a1b056cab.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

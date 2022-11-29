@@ -27,12 +27,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://player/Player.gd"
+"path": "res://assets/scripts/Player.gd"
 }, {
 "base": "Resource",
 "class": "PlayerControls",
 "language": "GDScript",
-"path": "res://player/PlayerControls.gd"
+"path": "res://assets/scripts/PlayerControls.gd"
 }, {
 "base": "PanelContainer",
 "class": "RepositoryItem",
