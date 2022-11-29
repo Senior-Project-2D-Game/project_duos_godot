@@ -10,7 +10,7 @@ var is_host = false
 var peer_ids = []
 
 func initialize_server():
-	is_host = true
+	Net.is_host = true
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_server(RPC_PORT, MAX_PLAYERS)
 	get_tree().network_peer = peer

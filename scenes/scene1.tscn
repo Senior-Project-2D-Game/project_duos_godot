@@ -378,7 +378,7 @@ __meta__ = {
 position = Vector2( -1, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 33 )
-frame = 9
+frame = 21
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Launcher"]
@@ -392,7 +392,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 33 )
-frame = 5
+frame = 17
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Launcher"]
@@ -406,7 +406,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 33 )
-frame = 16
+frame = 6
 playing = true
 
 [node name="Ice" type="Area2D" parent="."]

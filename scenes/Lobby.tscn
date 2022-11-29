@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/HostButton.gd" type="Script" id=1]
-[ext_resource path="res://scenes/JoinButton.gd" type="Script" id=2]
-[ext_resource path="res://scenes/LoadScreen.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Lobby.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Lobby.gd" type="Script" id=2]
+[ext_resource path="res://scenes/JoinButton.gd" type="Script" id=3]
+[ext_resource path="res://scenes/LoadScreen.gd" type="Script" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 
 [node name="Host" type="Button" parent="."]
 margin_left = 384.0
@@ -31,7 +31,7 @@ margin_top = 320.0
 margin_right = 640.0
 margin_bottom = 385.0
 text = "JOIN"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="IP" type="LineEdit" parent="Join"]
 margin_top = 88.0
@@ -54,7 +54,7 @@ visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
 color = Color( 0.129412, 0.145098, 0.160784, 1 )
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="ConnectText" type="Label" parent="LoadScreen"]
 margin_left = 384.0
