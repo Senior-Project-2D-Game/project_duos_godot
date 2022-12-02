@@ -61,6 +61,8 @@ IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 Net="*res://assets/scripts/network.gd"
+Global="*res://assets/scripts/Global.gd"
+Players="*res://Players.tscn"
 
 [editor_plugins]
 

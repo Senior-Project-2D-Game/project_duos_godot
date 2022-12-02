@@ -782,7 +782,7 @@ __meta__ = {
 position = Vector2( -1, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 33 )
-frame = 19
+frame = 4
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ice Level/Launcher"]
@@ -796,7 +796,6 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 33 )
-frame = 15
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ice Level/Launcher"]
@@ -810,7 +809,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 33 )
-frame = 4
+frame = 11
 playing = true
 
 [node name="Ice" type="Area2D" parent="Ice Level"]
@@ -934,7 +933,7 @@ __meta__ = {
 position = Vector2( -1, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 61 )
-frame = 12
+frame = 19
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Fire Level/Launcher"]
@@ -948,7 +947,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 61 )
-frame = 8
+frame = 15
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Fire Level/Launcher"]
@@ -962,7 +961,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 61 )
-frame = 19
+frame = 4
 playing = true
 
 [node name="placeholders" type="TileMap" parent="Fire Level"]
