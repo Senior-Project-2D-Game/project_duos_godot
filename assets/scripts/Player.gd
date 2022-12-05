@@ -8,25 +8,24 @@ const JUMP_FORCE = 300
 const UP_DIRECTION = Vector2.UP
 var player_state = "normal"
 var _velocity = Vector2.ZERO
-export var controls : Resource = null
 
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 
 onready var tween = $Tween
 
 func _physics_process(delta):
-	var is_falling = _velocity.y > 0.0 and not is_on_floor()
-	var is_jumping = Input.is_action_just_pressed(controls.jump) and is_on_floor()
-	var is_jump_cancelled = Input.is_action_just_released(controls.jump) and _velocity.y < 0.0
-	var is_idling = is_on_floor() and is_zero_approx(_velocity.x)
-	var is_running = is_on_floor() and not is_zero_approx(_velocity.x)
-	var is_launched = player_state == "launched"
-	var is_sliding = player_state == "sliding"
-	
 	if is_network_master():
+		var is_falling = _velocity.y > 0.0 and not is_on_floor()
+		var is_jumping = Input.is_action_just_pressed("p1_jump") and is_on_floor()
+		var is_jump_cancelled = Input.is_action_just_released("p1_jump") and _velocity.y < 0.0
+		var is_idling = is_on_floor() and is_zero_approx(_velocity.x)
+		var is_running = is_on_floor() and not is_zero_approx(_velocity.x)
+		var is_launched = player_state == "launched"
+		var is_sliding = player_state == "sliding"
+
 		var _horizontal_direction = (
-			Input.get_action_strength(controls.move_right)
-			- Input.get_action_strength(controls.move_left)
+			Input.get_action_strength("p1_move_right")
+			- Input.get_action_strength("p1_move_left")
 		)
 		_velocity.y += GRAVITY * delta 
 		
@@ -45,7 +44,7 @@ func _physics_process(delta):
 				_velocity.y = 0.0
 
 	_velocity = move_and_slide(_velocity, UP_DIRECTION)
-	rpc_unreliable("update_position", position)  # makes it gittery
+#	rpc_unreliable("update_position", position)  # makes it gittery
 	
 
 func puppet_position_set(new_value) -> void:
@@ -56,7 +55,7 @@ func puppet_position_set(new_value) -> void:
 
 func _on_network_tick_rate_timeout():
 	if is_network_master():
-		rset_unreliable(puppet_position, "global_position")
+		rset_unreliable("puppet_position", global_position)
 
 func _on_launcher_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body is KinematicBody2D:

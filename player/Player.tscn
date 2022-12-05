@@ -21,5 +21,6 @@ shape = SubResource( 1 )
 
 [node name="network_tick_rate" type="Timer" parent="."]
 wait_time = 0.03
+autostart = true
 
 [connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]
