@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://assets/animations/fire_turn-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/scripts/Player.gd" type="Script" id=2]
@@ -258,6 +258,10 @@ animations = [ {
 radius = 8.0
 height = 16.0
 
+[sub_resource type="AnimationNodeStateMachine" id=55]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=54]
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -275,6 +279,8 @@ shape = SubResource( 1 )
 wait_time = 0.03
 autostart = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 55 )
+parameters/playback = SubResource( 54 )
 
 [connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]

@@ -7,11 +7,16 @@ const SPEED = 200
 const JUMP_FORCE = 300
 const UP_DIRECTION = Vector2.UP
 var player_state = "normal"
+var state
 var _velocity = Vector2.ZERO
 
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 
 onready var tween = $Tween
+
+func _ready():
+	pass
+#	state = $AnimationTree.get("parameters/playback")
 
 func _physics_process(delta):
 	if is_network_master():
