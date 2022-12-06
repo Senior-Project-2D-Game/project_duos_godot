@@ -712,19 +712,19 @@ tile_data = PoolIntArray( -2031401, 536870912, 0, -1244568, 536870912, 65536, -3
 [node name="Death Collides" type="Area2D" parent="Ice Level"]
 position = Vector2( 0, 1000 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ice Level/Death Collides"]
+[node name="ice_dc1" type="CollisionShape2D" parent="Ice Level/Death Collides"]
 position = Vector2( -311, -930.5 )
 shape = SubResource( 73 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ice Level/Death Collides"]
+[node name="ice_dc2" type="CollisionShape2D" parent="Ice Level/Death Collides"]
 position = Vector2( 440.75, -921.5 )
 shape = SubResource( 74 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ice Level/Death Collides"]
+[node name="ice_dc3" type="CollisionShape2D" parent="Ice Level/Death Collides"]
 position = Vector2( 864, -921.75 )
 shape = SubResource( 75 )
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Ice Level/Death Collides"]
+[node name="ice_dc4" type="CollisionShape2D" parent="Ice Level/Death Collides"]
 position = Vector2( 2780.25, 294.5 )
 shape = SubResource( 72 )
 
@@ -787,7 +787,7 @@ __meta__ = {
 position = Vector2( -1, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 61 )
-frame = 4
+frame = 9
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Fire Level/Launcher"]
@@ -801,6 +801,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 61 )
+frame = 5
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Fire Level/Launcher"]
@@ -814,7 +815,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 61 )
-frame = 11
+frame = 16
 playing = true
 
 [node name="placeholders" type="TileMap" parent="Fire Level"]
@@ -1007,27 +1008,27 @@ tile_data = PoolIntArray( 131123, 7, 2, 131124, 7, 2, 131125, 7, 2, 131126, 7, 2
 
 [node name="Death Collides" type="Area2D" parent="Fire Level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire Level/Death Collides"]
+[node name="fire_dc1" type="CollisionShape2D" parent="Fire Level/Death Collides"]
 position = Vector2( -110.75, 65.5 )
 shape = SubResource( 67 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fire Level/Death Collides"]
+[node name="fire_dc2" type="CollisionShape2D" parent="Fire Level/Death Collides"]
 position = Vector2( 251, 69.5 )
 shape = SubResource( 68 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Fire Level/Death Collides"]
+[node name="fire_dc3" type="CollisionShape2D" parent="Fire Level/Death Collides"]
 position = Vector2( 601.5, 94 )
 shape = SubResource( 69 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Fire Level/Death Collides"]
+[node name="fire_dc4" type="CollisionShape2D" parent="Fire Level/Death Collides"]
 position = Vector2( 1026.5, 63 )
 shape = SubResource( 70 )
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Fire Level/Death Collides"]
+[node name="fire_dc5" type="CollisionShape2D" parent="Fire Level/Death Collides"]
 position = Vector2( 1385, 102 )
 shape = SubResource( 71 )
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Fire Level/Death Collides"]
+[node name="fire_dc6" type="CollisionShape2D" parent="Fire Level/Death Collides"]
 position = Vector2( 2787, -702 )
 shape = SubResource( 72 )
 
