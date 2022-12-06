@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire_death.png-e35932400c62fc588b04378a2f7422bf.stex"
+path="res://.import/lava-top-Sheet.png-3634f55fc3effd0b86013fd01475a502.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/fire_death.png"
-dest_files=[ "res://.import/fire_death.png-e35932400c62fc588b04378a2f7422bf.stex" ]
+source_file="res://assets/tiles/lava-top-Sheet.png"
+dest_files=[ "res://.import/lava-top-Sheet.png-3634f55fc3effd0b86013fd01475a502.stex" ]
 
 [params]
 
