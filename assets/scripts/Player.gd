@@ -30,10 +30,14 @@ func _physics_process(delta):
 		_velocity.y += GRAVITY * delta 
 		
 		if is_sliding:
-			_velocity.x = sign(_velocity.x) * SPEED
+			if _velocity.x != 0:
+				_velocity.x = sign(_velocity.x) * SPEED
+			else:
+				_velocity.x = SPEED
 			
 			if is_on_wall():
 				_velocity.x = -_velocity.x
+
 		else:
 			_velocity.x = _horizontal_direction * SPEED
 			if is_jumping:
