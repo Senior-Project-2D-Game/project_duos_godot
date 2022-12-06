@@ -59,16 +59,18 @@ func _on_network_tick_rate_timeout():
 
 func _on_launcher_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body is KinematicBody2D:
-		player_state = "launched"
+		body.player_state = "launched"
 
 func _on_launcher_exited(body_rid, body, body_shape_index, local_shape_index):
-	player_state = "normal"
-
+	if body is KinematicBody2D:
+		body.player_state = "normal"
 
 func _on_ice_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body is KinematicBody2D:
-		player_state = "sliding"
+		body.player_state = "sliding"
 
 
 func _on_ice_exited(body_rid, body, body_shape_index, local_shape_index):
-	player_state = "normal"
+	if body is KinematicBody2D:
+		body.player_state = "normal"
+

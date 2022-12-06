@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/tiles1.tres" type="TileSet" id=2]
@@ -254,105 +254,6 @@
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 52 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 9 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 9 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 9 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 9 )
-region = Rect2( 192, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 9 )
-region = Rect2( 224, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 9 )
-region = Rect2( 256, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 9 )
-region = Rect2( 288, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 9 )
-region = Rect2( 320, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 9 )
-region = Rect2( 352, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 9 )
-region = Rect2( 384, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 9 )
-region = Rect2( 416, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 9 )
-region = Rect2( 448, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 9 )
-region = Rect2( 480, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 9 )
-region = Rect2( 512, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 9 )
-region = Rect2( 544, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 9 )
-region = Rect2( 576, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 9 )
-region = Rect2( 608, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 9 )
-region = Rect2( 640, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 9 )
-region = Rect2( 672, 0, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=33]
-animations = [ {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
-"loop": true,
-"name": "default",
-"speed": 7.0
-} ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 152, 4 )
@@ -704,6 +605,46 @@ extents = Vector2( 8.5, 100.5 )
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( -672, 984 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 0, -8 )
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -800
+limit_top = 600
+limit_right = 4000
+limit_bottom = 1100
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.3
+drag_margin_top = 0.5
+drag_margin_right = 0.3
+editor_draw_limits = true
+
+[node name="Sprite2" type="Sprite" parent="Player"]
+texture = ExtResource( 20 )
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( -672, -16 )
+
+[node name="Camera2D" type="Camera2D" parent="Player2"]
+position = Vector2( 106, -32 )
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -800
+limit_top = -400
+limit_right = 4000
+limit_bottom = 100
+drag_margin_left = 0.3
+drag_margin_top = 0.5
+drag_margin_right = 0.3
+editor_draw_limits = true
+
+[node name="Sprite2" type="Sprite" parent="Player2"]
+texture = ExtResource( 17 )
+
 [node name="Ice Level" type="Node2D" parent="."]
 
 [node name="background" type="TileMap" parent="Ice Level"]
@@ -738,76 +679,6 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -1966107, 2, 0, -65583, 5, 0, -51, 4, 0, -50, 4, 0, -49, 4, 0, -48, 4, 0, -47, 5, 0, -21, 536870918, 131074, -20, 536870918, 131074, -19, 536870918, 1, -18, 6, 131076, -65396, 536870917, 2, -65395, 536870917, 3, -65392, 536870917, 1, -65391, 536870917, 1, -65387, 536870917, 1, -65386, 536870917, 2, -65385, 536870917, 0, -65384, 536870917, 1, 65482, 4, 0, 65483, 4, 0, 65484, 4, 0, 65485, 4, 0, 65486, 4, 0, 65487, 4, 0, 65488, 4, 0, 65489, 5, 65536, 65496, 536870918, 65537, 65497, 1073741830, 2, 65498, 5, 65537, 65519, 1, 131074, 65520, 1, 131074, 65521, 1, 131074, 65522, 1, 131074, 65523, 1, 131074, 65524, 1, 131074, 65525, 1, 131074, 65526, 1, 131074, 65527, 1, 131074, 65528, 1, 131074, 65529, 1, 131074, 65530, 1, 131074, 65531, 1, 131074, 65532, 1, 131074, 65533, 1, 131074, 65534, 1, 131074, 65535, 1, 131074, 0, 1, 131074, 1, 1, 131074, 8, 1, 131074, 9, 1, 131074, 10, 1, 131074, 11, 1, 131074, 12, 1, 131074, 13, 1, 131074, 14, 1, 131074, 15, 1, 131074, 16, 1, 131074, 17, 1, 131074, 18, 1, 131074, 19, 1, 131074, 20, 1, 131074, 21, 1, 131074, 22, 1, 131074, 31, 1, 131074, 32, 1, 131074, 33, 1, 131074, 34, 1, 131074, 35, 1, 131074, 36, 1, 131074, 37, 1, 131074, 38, 1, 131074, 39, 1, 131074, 40, 1, 131074, 57, 1, 131074, 58, 1, 131074, 59, 1, 131074, 60, 1, 131074, 61, 1, 131074, 62, 1, 131074, 63, 1, 131074, 64, 1, 131074, 65, 1, 131074, 68, 1, 131074, 69, 1, 131074, 70, 1, 131074, 79, 1, 131074, 80, 1, 131074, 81, 1, 131074, 82, 1, 131074, 83, 1, 131074, 84, 1, 131074, 85, 1, 131074, 86, 1, 131074, 87, 1, 131074, 88, 1, 131074, 89, 1, 131074, 90, 1, 131074, 91, 1, 131074, 92, 1, 131074, 93, 1, 131074, 114, 1073741825, 0, 115, 1073741825, 0, 116, 1073741825, 0, 117, 1073741825, 0, 118, 1073741825, 0, 119, 1073741825, 0, 120, 1073741825, 0, 121, 1073741825, 0, 122, 1073741825, 0, 123, 1073741825, 0, 124, 1073741825, 0, 125, 1073741825, 0, 126, 1073741825, 0, 127, 1073741825, 0, 128, 1073741825, 0, 129, 1073741825, 0, 130, 1073741825, 0, 131, 1073741825, 0, 132, 1073741825, 0, 133, 1073741825, 0, 134, 1073741825, 0 )
-
-[node name="obstacles" type="TileMap" parent="Ice Level"]
-visible = false
-rotation = 0.000185491
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( -851874, -2147483647, 131075, -851873, 1, 131073, -851872, -1610612735, 131075, -786338, -1073741823, 131073, -786337, -1073741823, 131072, -786336, -1610612735, 131073, -720802, -1073741823, 131073, -720801, -1073741823, 131074, -720800, -1610612735, 131073, -655294, -2147483647, 131075, -655293, -1610612735, 131075, -655266, -1073741823, 131073, -655265, -1610612735, 131074, -655264, -1610612735, 131073, -589758, -1073741823, 131073, -589757, -1610612735, 131073, -589730, -1073741823, 131073, -589729, -1073741823, 131074, -589728, -1610612735, 131073, -524222, -1073741823, 131073, -524221, -1610612735, 131073, -524194, -1073741823, 131073, -524193, -1073741823, 131072, -524192, -1610612735, 131073, -458686, -1073741823, 131073, -458685, -1610612735, 131073, -458658, -1073741823, 131073, -458657, -1073741823, 131072, -458656, -1610612735, 131073, -393150, -1073741823, 131073, -393149, -1610612735, 131073, -393122, -1073741823, 131073, -393121, -1073741823, 131074, -393120, -1610612735, 131073, -327614, -1073741823, 131073, -327613, -1610612735, 131073, -327586, -1073741823, 131073, -327585, -1610612735, 131074, -327584, -1610612735, 131073, -262078, -1073741823, 131073, -262077, -1610612735, 131073, -262050, -1073741823, 131073, -262049, -1073741823, 131074, -262048, -1610612735, 131073, -196542, -1073741823, 131073, -196541, -1610612735, 131073, -196514, -1073741823, 131073, -196513, -1073741823, 131072, -196512, -1610612735, 131073, -131006, -1073741823, 131073, -131005, -1610612735, 131073, -130978, -1073741823, 131073, -130977, -1073741823, 2, -130976, -1610612735, 131073, -20, 536870915, 65541, -19, 536870915, 65541, -65509, 536870915, 65541, -65483, 536870915, 65541, -65470, -1073741823, 131073, -65469, -1610612735, 131073, -65442, -1073741823, 131073, -65441, -1073741823, 0, -65440, -1610612735, 131073, 41, -2147483647, 131077, 42, -1073741823, 2, 43, 1, 131072, 66, -2147483647, 131077, 67, 1, 131072, 94, -2147483647, 131077, 95, -1073741823, 2, 96, 1, 131072 )
-
-[node name="Player" parent="Ice Level" instance=ExtResource( 1 )]
-position = Vector2( -672, -16 )
-
-[node name="Camera2D" type="Camera2D" parent="Ice Level/Player"]
-position = Vector2( 106, -32 )
-zoom = Vector2( 0.5, 0.5 )
-limit_left = -800
-limit_top = -400
-limit_right = 4000
-limit_bottom = 100
-drag_margin_left = 0.3
-drag_margin_top = 0.5
-drag_margin_right = 0.3
-editor_draw_limits = true
-
-[node name="Sprite2" type="Sprite" parent="Ice Level/Player"]
-texture = ExtResource( 17 )
-
-[node name="Launcher" type="Area2D" parent="Ice Level"]
-visible = false
-position = Vector2( -312, -48 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ice Level/Launcher"]
-shape = SubResource( 1 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Ice Level/Launcher/CollisionShape2D"]
-position = Vector2( -1, 10 )
-scale = Vector2( 2.5, 2.5 )
-frames = SubResource( 33 )
-frame = 15
-playing = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ice Level/Launcher"]
-position = Vector2( 752, 0 )
-shape = SubResource( 1 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="Ice Level/Launcher/CollisionShape2D2"]
-position = Vector2( 0, 27 )
-scale = Vector2( 1.5, 1.5 )
-frames = SubResource( 33 )
-frame = 11
-playing = true
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ice Level/Launcher"]
-position = Vector2( 1176, 0 )
-shape = SubResource( 1 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="Ice Level/Launcher/CollisionShape2D3"]
-position = Vector2( -6.10352e-05, 10 )
-scale = Vector2( 2.5, 2.5 )
-frames = SubResource( 33 )
-playing = true
 
 [node name="Ice" type="Area2D" parent="Ice Level"]
 
@@ -896,26 +767,6 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -851874, -2147483647, 131075, -851873, 1, 131073, -851872, -1610612735, 131075, -786338, -1073741823, 131073, -786337, -1073741823, 131072, -786336, -1610612735, 131073, -720802, -1073741823, 131073, -720801, -1073741823, 131074, -720800, -1610612735, 131073, -655294, -2147483647, 131075, -655293, -1610612735, 131075, -655266, -1073741823, 131073, -655265, -1610612735, 131074, -655264, -1610612735, 131073, -589758, -1073741823, 131073, -589757, -1610612735, 131073, -589730, -1073741823, 131073, -589729, -1073741823, 131074, -589728, -1610612735, 131073, -524222, -1073741823, 131073, -524221, -1610612735, 131073, -524194, -1073741823, 131073, -524193, -1073741823, 131072, -524192, -1610612735, 131073, -458686, -1073741823, 131073, -458685, -1610612735, 131073, -458658, -1073741823, 131073, -458657, -1073741823, 131072, -458656, -1610612735, 131073, -393150, -1073741823, 131073, -393149, -1610612735, 131073, -393122, -1073741823, 131073, -393121, -1073741823, 131074, -393120, -1610612735, 131073, -327614, -1073741823, 131073, -327613, -1610612735, 131073, -327586, -1073741823, 131073, -327585, -1610612735, 131074, -327584, -1610612735, 131073, -262078, -1073741823, 131073, -262077, -1610612735, 131073, -262050, -1073741823, 131073, -262049, -1073741823, 131074, -262048, -1610612735, 131073, -196542, -1073741823, 131073, -196541, -1610612735, 131073, -196514, -1073741823, 131073, -196513, -1073741823, 131072, -196512, -1610612735, 131073, -131006, -1073741823, 131073, -131005, -1610612735, 131073, -130978, -1073741823, 131073, -130977, -1073741823, 2, -130976, -1610612735, 131073, -20, 536870915, 65541, -19, 536870915, 65541, -65509, 536870915, 65541, -65483, 536870915, 65541, -65470, -1073741823, 131073, -65469, -1610612735, 131073, -65442, -1073741823, 131073, -65441, -1073741823, 0, -65440, -1610612735, 131073, 41, -2147483647, 131077, 42, -1073741823, 2, 43, 1, 131072, 66, -2147483647, 131077, 67, 1, 131072, 94, -2147483647, 131077, 95, -1073741823, 2, 96, 1, 131072, 114, 536870913, 4, 115, 1, 1, 116, 1, 1, 117, 1, 1, 118, 1, 1, 119, 1, 1, 120, 1, 1, 121, 1, 1, 122, 1, 1, 123, 1, 1, 124, 1, 1, 125, 1, 1, 126, 1, 1, 127, 1, 1, 128, 1, 1, 129, 1, 1, 130, 1, 1, 131, 1, 1, 132, 1, 1, 133, 1, 1, 134, 1, 1, 135, 1, 1, 136, 1, 4 )
 
-[node name="Player" parent="Fire Level" instance=ExtResource( 1 )]
-position = Vector2( -672, -16 )
-
-[node name="Camera2D" type="Camera2D" parent="Fire Level/Player"]
-position = Vector2( 0, -8 )
-zoom = Vector2( 0.5, 0.5 )
-limit_left = -800
-limit_top = 600
-limit_right = 4000
-limit_bottom = 1100
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-drag_margin_left = 0.3
-drag_margin_top = 0.5
-drag_margin_right = 0.3
-editor_draw_limits = true
-
-[node name="Sprite2" type="Sprite" parent="Fire Level/Player"]
-texture = ExtResource( 20 )
-
 [node name="Launcher" type="Area2D" parent="Fire Level"]
 position = Vector2( -312, -48 )
 
@@ -929,7 +780,7 @@ __meta__ = {
 position = Vector2( -1, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 61 )
-frame = 8
+frame = 17
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Fire Level/Launcher"]
@@ -943,7 +794,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 61 )
-frame = 4
+frame = 13
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Fire Level/Launcher"]
@@ -957,7 +808,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 61 )
-frame = 15
+frame = 2
 playing = true
 
 [node name="placeholders" type="TileMap" parent="Fire Level"]
@@ -1030,7 +881,7 @@ position = Vector2( -1551.5, 99.5 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -851874, -2147483647, 131075, -851873, 1, 131073, -851872, -1610612735, 131075, -786338, -1073741823, 131073, -786337, -1073741823, 131072, -786336, -1610612735, 131073, -720802, -1073741823, 131073, -720801, -1073741823, 131074, -720800, -1610612735, 131073, -655266, -1073741823, 131073, -655265, -1610612735, 131074, -655264, -1610612735, 131073, -589730, -1073741823, 131073, -589729, -1073741823, 131074, -589728, -1610612735, 131073, -524194, -1073741823, 131073, -524193, -1073741823, 131072, -524192, -1610612735, 131073, -458658, -1073741823, 131073, -458657, -1073741823, 131072, -458656, -1610612735, 131073, -393122, -1073741823, 131073, -393121, -1073741823, 131074, -393120, -1610612735, 131073, -327586, -1073741823, 131073, -327585, -1610612735, 131074, -327584, -1610612735, 131073, -262050, -1073741823, 131073, -262049, -1073741823, 131074, -262048, -1610612735, 131073, -196514, -1073741823, 131073, -196513, -1073741823, 131072, -196512, -1610612735, 131073, -130978, -1073741823, 131073, -130977, -1073741823, 2, -130976, -1610612735, 131073, -65442, -1073741823, 131073, -65441, -1073741823, 0, -65440, -1610612735, 131073 )
+tile_data = PoolIntArray( -851874, -2147483647, 131075, -851873, 1, 131073, -851872, -1610612735, 131075, -786338, -1073741823, 131073, -786337, -1073741823, 131072, -786336, -1610612735, 131073, -720802, -1073741823, 131073, -720801, -1073741823, 131074, -720800, -1610612735, 131073, -655266, -1073741823, 131073, -655265, -1610612735, 131074, -655264, -1610612735, 131073, -589730, -1073741823, 131073, -589729, -1073741823, 131074, -589728, -1610612735, 131073, -524194, -1073741823, 131073, -524193, -1073741823, 131072, -524192, -1610612735, 131073, -458658, -1073741823, 131073, -458657, -1073741823, 131072, -458656, -1610612735, 131073, -393122, -1073741823, 131073, -393121, -1073741823, 131074, -393120, -1610612735, 131073, -327586, -1073741823, 131073, -327585, -1610612735, 131074, -327584, -1610612735, 131073, -262050, -1073741823, 131073, -262049, -1073741823, 131074, -262048, -1610612735, 131073, -196514, -1073741823, 131073, -196513, -1073741823, 131072, -196512, -1610612735, 131073, -130978, -1073741823, 131073, -130977, -1073741823, 2, -130976, -1610612735, 131073, -65536, 3, 0, -65442, -1073741823, 131073, -65441, -1073741823, 0, -65440, -1610612735, 131073, 0, 3, 0, 65536, 3, 0, 65537, 3, 0 )
 
 [node name="Icemap" type="TileMap" parent="Fire Level/Walls/Area2D3/CollisionShape2D3"]
 position = Vector2( -1551.5, -884.5 )
@@ -1039,10 +890,10 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -851874, -2147483647, 131075, -851873, 1, 131073, -851872, -1610612735, 131075, -786338, -1073741823, 131073, -786337, -1073741823, 131072, -786336, -1610612735, 131073, -720802, -1073741823, 131073, -720801, -1073741823, 131074, -720800, -1610612735, 131073, -655266, -1073741823, 131073, -655265, -1610612735, 131074, -655264, -1610612735, 131073, -589730, -1073741823, 131073, -589729, -1073741823, 131074, -589728, -1610612735, 131073, -524194, -1073741823, 131073, -524193, -1073741823, 131072, -524192, -1610612735, 131073, -458658, -1073741823, 131073, -458657, -1073741823, 131072, -458656, -1610612735, 131073, -393122, -1073741823, 131073, -393121, -1073741823, 131074, -393120, -1610612735, 131073, -327586, -1073741823, 131073, -327585, -1610612735, 131074, -327584, -1610612735, 131073, -262050, -1073741823, 131073, -262049, -1073741823, 131074, -262048, -1610612735, 131073, -196514, -1073741823, 131073, -196513, -1073741823, 131072, -196512, -1610612735, 131073, -130978, -1073741823, 131073, -130977, -1073741823, 2, -130976, -1610612735, 131073, -65442, -1073741823, 131073, -65441, -1073741823, 0, -65440, -1610612735, 131073 )
 
-[connection signal="body_shape_entered" from="Ice Level/Launcher" to="Ice Level/Player" method="_on_launcher_entered"]
-[connection signal="body_shape_exited" from="Ice Level/Launcher" to="Ice Level/Player" method="_on_launcher_exited"]
-[connection signal="body_shape_entered" from="Ice Level/Ice" to="Ice Level/Player" method="_on_ice_entered"]
-[connection signal="body_shape_exited" from="Ice Level/Ice" to="Ice Level/Player" method="_on_ice_exited"]
+[connection signal="body_shape_entered" from="Ice Level/Ice" to="Player2" method="_on_ice_entered"]
+[connection signal="body_shape_exited" from="Ice Level/Ice" to="Player2" method="_on_ice_exited"]
+[connection signal="body_shape_entered" from="Fire Level/Launcher" to="Player2" method="_on_launcher_entered"]
+[connection signal="body_shape_exited" from="Fire Level/Launcher" to="Player2" method="_on_launcher_exited"]
 [connection signal="body_shape_entered" from="Fire Level/Walls/Area2D" to="Fire Level/Walls/Area2D" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="Fire Level/Walls/Area2D2" to="Fire Level/Walls/Area2D2" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="Fire Level/Walls/Area2D3" to="Fire Level/Walls/Area2D3" method="_on_Area2D_body_shape_entered"]

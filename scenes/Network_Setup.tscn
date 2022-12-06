@@ -33,6 +33,28 @@ margin_bottom = 7.0
 text = "HOST"
 align = 1
 
+[node name="set_to_local" type="Button" parent="Multiplayer_config"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 195.0
+margin_top = -187.0
+margin_right = 306.0
+margin_bottom = -149.0
+
+[node name="Label" type="Label" parent="Multiplayer_config/set_to_local"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -7.0
+margin_right = 38.5
+margin_bottom = 7.0
+text = "LOCALHOST"
+align = 1
+
 [node name="Join_Server" type="Button" parent="Multiplayer_config"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -100,6 +122,7 @@ text = "START GAME"
 align = 1
 
 [connection signal="pressed" from="Multiplayer_config/Host_Server" to="." method="_on_Host_Server_pressed"]
+[connection signal="pressed" from="Multiplayer_config/set_to_local" to="." method="_on_set_to_local_pressed"]
 [connection signal="pressed" from="Multiplayer_config/Join_Server" to="." method="_on_Join_Server_pressed"]
 [connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Start_Btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Host_Server_pressed"]

@@ -7,7 +7,7 @@ onready var server_ip_address = $Multiplayer_config/server_ip
 onready var device_ip_address = $CanvasLayer/device_ip
 onready var start_game = $CanvasLayer/Start
 
-var main_level = "res://scenes/main_scene.tscn"
+var main_level = "res://scenes/Levels/Fire Ice Level.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,8 +23,7 @@ func _ready():
 		start_game.hide()
 
 func _process(delta):
-	if get_tree().network_peer != null:
-		print(get_tree().is_network_server())		
+	if get_tree().network_peer != null:	
 		if get_tree().get_network_connected_peers().size() > 0 and get_tree().is_network_server():
 			start_game.show()
 		else:
@@ -45,7 +44,7 @@ func _player_disconnected(id):
 func _on_Host_Server_pressed():
 	multiplayer_config_ui.hide()
 	Network.create_server()
-	
+
 	instance_player(get_tree().get_network_unique_id())
 
 func _on_Join_Server_pressed():
@@ -53,6 +52,7 @@ func _on_Join_Server_pressed():
 		multiplayer_config_ui.hide()
 		Network.ip_address = server_ip_address.text
 		Network.join_server()
+		
 
 func _connected_to_server():
 	yield(get_tree().create_timer(0.1), "timeout")
@@ -63,6 +63,7 @@ func instance_player(id):
 	var player_instance = Global.instance_node_at_location(player, Players, Vector2(0,0))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
+
 	
 sync func switch_to_game() -> void:
 	get_tree().change_scene(main_level)
@@ -70,3 +71,7 @@ sync func switch_to_game() -> void:
 
 func _on_Start_Btn_pressed():
 	rpc("switch_to_game")
+
+
+func _on_set_to_local_pressed():
+	server_ip_address.text = "127.0.0.1"
