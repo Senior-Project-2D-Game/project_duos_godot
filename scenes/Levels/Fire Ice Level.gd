@@ -1,6 +1,8 @@
 extends Node2D
 
 var player = preload("res://player/Player.tscn")
+var ice_player = preload("res://player/IcePlayer.tscn")
+var fire_player = preload("res://player/FirePlayer.tscn")
 
 onready var players := {
 	"1": {
@@ -25,10 +27,13 @@ func _ready():
 	fire_sprite.set_name("FirePlayer")
 	var ice_sprite = Sprite.new()
 	ice_sprite.set_name("IcePlayer")
+#	player_arr[0].add_child(ice_player.instance())
+#	player_arr[1].add_child(fire_player.instance())
 	player_arr[0].add_child(ice_sprite)
 	player_arr[1].add_child(fire_sprite)
 	fire_sprite.texture = load("res://assets/tiles/fire_char1.png")
 	ice_sprite.texture = load("res://assets/tiles/ice_char1.png")
+
 	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[0])
 	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[1])
 	players["1"].player = player_arr[0]
