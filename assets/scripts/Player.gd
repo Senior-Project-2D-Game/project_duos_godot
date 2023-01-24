@@ -41,7 +41,8 @@ func _physics_process(delta):
 				_velocity.x = SPEED
 			
 			if is_on_wall():
-				_velocity.x = -_velocity.x
+				_velocity.x = -SPEED
+
 
 		else:
 			_velocity.x = _horizontal_direction * SPEED

@@ -6,5 +6,7 @@ func _on_Area2D_body_shape_entered(body_rid, body, body_shape_index, local_shape
 
 # handles body collision with death collider
 func _on_Death_Collides_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if body is KinematicBody2D:
+	if body.get_name() == "FirePlayer":
 		body.position = Vector2(-600, -100)
+	elif body.get_name() == "IcePlayer":
+		body.position = Vector2(-600, 900)

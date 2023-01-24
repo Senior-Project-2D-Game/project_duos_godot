@@ -6,12 +6,12 @@ onready var players := {
 	"1": {
 		viewport = $"VBoxContainer/ViewportContainer/Viewport",
 		camera = $"VBoxContainer/ViewportContainer/Viewport/Camera2D",
-		player = $"VBoxContainer/ViewportContainer/Viewport/Level/Ice Level/Player",
+		player = $"VBoxContainer/ViewportContainer/Viewport/Level/FirePlayer",
 	},
 	"2": {
 		viewport = $"VBoxContainer/ViewportContainer2/Viewport",
 		camera = $"VBoxContainer/ViewportContainer2/Viewport/Camera2D",
-		player = $"VBoxContainer/ViewportContainer/Viewport/Level/Fire Level/Player",
+		player = $"VBoxContainer/ViewportContainer/Viewport/Level/IcePlayer",
 	}
 }
 
@@ -20,23 +20,25 @@ func _ready():
 	player_arr[0].get_parent().remove_child(player_arr[0])
 	player_arr[1].get_parent().remove_child(player_arr[1])
 	player_arr[0].position = Vector2(-600,-100)
-	player_arr[1].position = Vector2(-600,-100)
+	player_arr[1].position = Vector2(-600,900)
 	var fire_sprite = Sprite.new()
+	fire_sprite.set_name("FirePlayer")
 	var ice_sprite = Sprite.new()
+	ice_sprite.set_name("IcePlayer")
 	player_arr[0].add_child(ice_sprite)
 	player_arr[1].add_child(fire_sprite)
 	fire_sprite.texture = load("res://assets/tiles/fire_char1.png")
 	ice_sprite.texture = load("res://assets/tiles/ice_char1.png")
-	$"VBoxContainer/ViewportContainer/Viewport/Level/Ice Level".add_child(player_arr[0])
-	$"VBoxContainer/ViewportContainer/Viewport/Level/Fire Level".add_child(player_arr[1])
+	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[0])
+	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[1])
 	players["1"].player = player_arr[0]
 	players["2"].player = player_arr[1]
 	
-	var ice = $"VBoxContainer/ViewportContainer/Viewport/Level/Ice Level/Ice"
+	var ice = $"VBoxContainer/ViewportContainer/Viewport/Level/Ice"
 	ice.connect("body_shape_entered", players["1"].player,"_on_ice_entered")
 	ice.connect("body_shape_exited", players["1"].player,"_on_ice_exited")
 	
-	var launcher = $"VBoxContainer/ViewportContainer/Viewport/Level/Fire Level/Launcher"
+	var launcher = $"VBoxContainer/ViewportContainer/Viewport/Level/Launcher"
 	launcher.connect("body_shape_entered", players["2"].player,"_on_launcher_entered")
 	launcher.connect("body_shape_exited", players["2"].player,"_on_launcher_exited")
 	
