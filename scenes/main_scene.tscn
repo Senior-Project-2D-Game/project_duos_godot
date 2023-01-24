@@ -781,7 +781,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Launcher/CollisionShape2D"]
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 61 )
-frame = 16
+frame = 1
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Launcher"]
@@ -795,7 +795,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 61 )
-frame = 12
+frame = 19
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Launcher"]
@@ -809,7 +809,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 61 )
-frame = 1
+frame = 8
 playing = true
 
 [node name="placeholders2" type="TileMap" parent="."]
