@@ -23,16 +23,16 @@ func _ready():
 	player_arr[1].get_parent().remove_child(player_arr[1])
 	player_arr[0].position = Vector2(-600,-100)
 	player_arr[1].position = Vector2(-600,900)
-	var fire_sprite = Sprite.new()
-	fire_sprite.set_name("FirePlayer")
-	var ice_sprite = Sprite.new()
-	ice_sprite.set_name("IcePlayer")
-#	player_arr[0].add_child(ice_player.instance())
-#	player_arr[1].add_child(fire_player.instance())
+	var fire_sprite = Sprite.new()				# comment for animation
+	fire_sprite.set_name("FirePlayer")			# comment for animation
+	var ice_sprite = Sprite.new()				# comment for animation
+	ice_sprite.set_name("IcePlayer")			# comment for animation
+#	player_arr[0].add_child(ice_player.instance())		# uncomment for animation
+#	player_arr[1].add_child(fire_player.instance())		# uncomment for animation	
 	player_arr[0].add_child(ice_sprite)
 	player_arr[1].add_child(fire_sprite)
-	fire_sprite.texture = load("res://assets/tiles/fire_char1.png")
-	ice_sprite.texture = load("res://assets/tiles/ice_char1.png")
+	fire_sprite.texture = load("res://assets/tiles/fire_char1.png")		# comment for animation
+	ice_sprite.texture = load("res://assets/tiles/ice_char1.png")		# comment for animation
 
 	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[0])
 	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[1])
