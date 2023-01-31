@@ -9,17 +9,20 @@ const UP_DIRECTION = Vector2.UP
 var player_state = "normal"
 var state
 var _velocity = Vector2.ZERO
+var state_machine
+
+var isIcePlayer = true
 
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 
 onready var tween = $Tween
 
 func _ready():
-	pass
-#	state = $AnimationTree.get("parameters/playback")
+	state_machine = $AnimationTree.get("parameters/playback")
 
 func _physics_process(delta):
 	if is_network_master():
+		var current = state_machine.get_current_node()
 		var is_falling = _velocity.y > 0.0 and not is_on_floor()
 		var is_jumping = Input.is_action_just_pressed("p1_jump") and is_on_floor()
 		var is_jump_cancelled = Input.is_action_just_released("p1_jump") and _velocity.y < 0.0
@@ -32,9 +35,13 @@ func _physics_process(delta):
 			Input.get_action_strength("p1_move_right")
 			- Input.get_action_strength("p1_move_left")
 		)
-		_velocity.y += GRAVITY * delta 
+		
+		_velocity.y += GRAVITY * delta 		# jump
 		
 		if is_sliding:
+			if isIcePlayer:
+				state_machine.travel("ice_frozen")
+			
 			if _velocity.x != 0:
 				_velocity.x = sign(_velocity.x) * SPEED
 			else:
@@ -43,20 +50,44 @@ func _physics_process(delta):
 			if is_on_wall():
 				_velocity.x = -SPEED
 
-
 		else:
 			_velocity.x = _horizontal_direction * SPEED
-			if is_jumping:
-				_velocity.y = -JUMP_FORCE
-			elif is_launched:
-				_velocity.y = -JUMP_FORCE + abs(_velocity.y)/2
-			elif is_jump_cancelled:
-				_velocity.y = 0.0
+			
+			if _horizontal_direction > 0:
+				state_machine.travel("ice_run")
+				$Sprite.flip_h = false
+				
+#				else:
+#					state_machine.travel("fire_run")
+				
+#				state_machine.travel("ice_turn")
+				
+				if is_jumping:
+					_velocity.y = -JUMP_FORCE
+				elif is_launched:
+					_velocity.y = -JUMP_FORCE + abs(_velocity.y)/2
+				elif is_jump_cancelled:
+					_velocity.y = 0.0
+					
+			elif _horizontal_direction < 0:
+				state_machine.travel("ice_run")
+				$Sprite.flip_h = true								
+				
+#				state_machine.travel("ice_turn")				
+				
+				if is_jumping:
+					_velocity.y = -JUMP_FORCE
+				elif is_launched:
+					_velocity.y = -JUMP_FORCE + abs(_velocity.y)/2
+				elif is_jump_cancelled:
+					_velocity.y = 0.0
+			else:
+				state_machine.travel("ice_idle")
 
 	_velocity = move_and_slide(_velocity, UP_DIRECTION)
-#	rpc_unreliable("update_position", position)  # makes it gittery
 	
-
+	
+		
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value
 	

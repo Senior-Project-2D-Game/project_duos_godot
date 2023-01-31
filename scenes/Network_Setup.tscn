@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Network_setup.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/tiles/skytop3.png" type="Texture" id=3]
+[ext_resource path="res://assets/tiles/dark_bg2.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 29
@@ -18,18 +20,27 @@ size = 29
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 29
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
+size = 24
 font_data = ExtResource( 2 )
 
 [node name="Network_Setup" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 3 )
+stretch_mode = 1
 
 [node name="Multiplayer_config" type="Control" parent="."]
 anchor_right = 1.0
@@ -41,19 +52,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -112.0
-margin_top = -108.0
+margin_top = -180.0
 margin_right = 112.0
-margin_bottom = -31.0
+margin_bottom = -103.0
 
 [node name="Label" type="Label" parent="Multiplayer_config/Host_Server"]
 anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.511
 anchor_bottom = 0.5
 margin_left = -32.0
-margin_top = -14.5
-margin_right = 37.0
-margin_bottom = 22.5
+margin_top = -22.5
+margin_right = 34.536
+margin_bottom = 14.5
 custom_fonts/font = SubResource( 1 )
 text = "HOST"
 align = 1
@@ -63,10 +74,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 195.0
-margin_top = -187.0
-margin_right = 306.0
-margin_bottom = -149.0
+margin_left = 208.0
+margin_top = -44.0
+margin_right = 319.0
+margin_bottom = -6.0
 custom_fonts/font = SubResource( 4 )
 
 [node name="Label" type="Label" parent="Multiplayer_config/set_to_local"]
@@ -88,9 +99,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -112.0
-margin_top = 25.5
+margin_top = 60.0
 margin_right = 112.0
-margin_bottom = 102.5
+margin_bottom = 137.0
 
 [node name="Label" type="Label" parent="Multiplayer_config/Join_Server"]
 anchor_left = 0.5
@@ -108,10 +119,10 @@ align = 1
 [node name="server_ip" type="LineEdit" parent="Multiplayer_config"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -178.0
-margin_top = 110.0
-margin_right = 178.0
-margin_bottom = 151.0
+margin_left = -176.0
+margin_top = 256.0
+margin_right = 180.0
+margin_bottom = 297.0
 rect_scale = Vector2( 0.997717, 1.01887 )
 custom_fonts/font = SubResource( 2 )
 align = 1
@@ -119,15 +130,25 @@ placeholder_text = "ENTER IP ADDRESS"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+margin_left = -16.0
+margin_top = 488.0
+margin_right = 1040.0
+margin_bottom = 968.0
+texture = ExtResource( 4 )
+stretch_mode = 1
+
 [node name="device_ip" type="Label" parent="CanvasLayer"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -77.0
 margin_right = -1.0
+custom_fonts/font = SubResource( 7 )
 align = 1
 
 [node name="Start" type="Button" parent="CanvasLayer"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -142,13 +163,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = -7.0
-margin_right = 40.0
-margin_bottom = 7.0
+margin_left = -72.0
+margin_top = -14.5
+margin_right = 66.0
+margin_bottom = 15.5
 custom_fonts/font = SubResource( 6 )
 text = "START GAME"
 align = 1
+
 [connection signal="pressed" from="Multiplayer_config/Host_Server" to="." method="_on_Host_Server_pressed"]
 [connection signal="pressed" from="Multiplayer_config/set_to_local" to="." method="_on_set_to_local_pressed"]
 [connection signal="pressed" from="Multiplayer_config/Join_Server" to="." method="_on_Join_Server_pressed"]

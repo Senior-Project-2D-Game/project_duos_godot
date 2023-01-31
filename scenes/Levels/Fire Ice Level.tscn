@@ -26,7 +26,7 @@ render_target_update_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="VBoxContainer/ViewportContainer/Viewport"]
 current = true
-zoom = Vector2( 0.66, 0.66 )
+zoom = Vector2( 0.5, 0.5 )
 limit_left = -800
 limit_right = 4000
 limit_bottom = 80
@@ -55,7 +55,7 @@ render_target_update_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="VBoxContainer/ViewportContainer2/Viewport"]
 current = true
-zoom = Vector2( 0.66, 0.66 )
+zoom = Vector2( 0.5, 0.5 )
 limit_left = -800
 limit_right = 4000
 limit_bottom = 1250
