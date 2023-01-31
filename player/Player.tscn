@@ -20,5 +20,4 @@ wait_time = 0.03
 autostart = true
 
 [node name="Tween" type="Tween" parent="."]
-
 [connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]
