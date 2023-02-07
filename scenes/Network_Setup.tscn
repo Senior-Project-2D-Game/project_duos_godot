@@ -174,5 +174,5 @@ align = 1
 [connection signal="pressed" from="Multiplayer_config/Host_Server" to="." method="_on_Host_Server_pressed"]
 [connection signal="pressed" from="Multiplayer_config/set_to_local" to="." method="_on_set_to_local_pressed"]
 [connection signal="pressed" from="Multiplayer_config/Join_Server" to="." method="_on_Join_Server_pressed"]
-[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Host_Server_pressed"]
 [connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Start_Btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Host_Server_pressed"]

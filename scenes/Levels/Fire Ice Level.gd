@@ -22,6 +22,10 @@ func _ready():
 
 	player_arr[0].position = Vector2(-600,-100)
 	player_arr[1].position = Vector2(-600,900)
+	
+	# Set respawn location
+	player_arr[0].spawn = Vector2(-600,-100)
+	player_arr[1].spawn = Vector2(-600,900)
 
 	var fire_sprite = Sprite.new()				# comment for animation
 	var ice_sprite = Sprite.new()				# comment for animation	

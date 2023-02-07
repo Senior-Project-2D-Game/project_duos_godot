@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://assets/animations/lava.tres" type="Texture" id=1]
 [ext_resource path="res://scenes/tiles1.tres" type="TileSet" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/animations/lava_top.tres" type="Texture" id=17]
 [ext_resource path="res://assets/scripts/platform.gd" type="Script" id=18]
 [ext_resource path="res://assets/scripts/Area2D.gd" type="Script" id=19]
+[ext_resource path="res://assets/scripts/Checkpoint.gd" type="Script" id=20]
 
 [sub_resource type="TileSet" id=1]
 0/name = "fback2.png 0"
@@ -630,6 +631,9 @@ extents = Vector2( 117.5, 50 )
 [sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 126, 82 )
 
+[sub_resource type="RectangleShape2D" id=65]
+extents = Vector2( 15.9606, 23.6641 )
+
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 26.2854, 5.33333 )
 
@@ -742,6 +746,7 @@ position = Vector2( 1388, -4 )
 shape = SubResource( 8 )
 
 [node name="placeholders" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 8 )
 format = 1
@@ -752,7 +757,7 @@ scale = Vector2( 0.1, 0.1 )
 z_index = -1
 tile_set = SubResource( 10 )
 format = 1
-tile_data = PoolIntArray( -2031401, 536870912, 0, -1244568, 536870912, 65536, -327780, 536870912, 0, -393099, 536870912, 0, -392964, 536870912, 0 )
+tile_data = PoolIntArray( -1244568, 536870912, 65536, -327780, 536870912, 0, -393099, 536870912, 0, -393030, 0, 0, -392964, 536870912, 0 )
 
 [node name="Death Collides" type="Area2D" parent="."]
 position = Vector2( 0, 1000 )
@@ -822,6 +827,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Launcher/CollisionShape2D"]
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 40 )
+frame = 20
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Launcher"]
@@ -835,7 +841,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 40 )
-frame = 18
+frame = 16
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Launcher"]
@@ -849,7 +855,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 40 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="placeholders2" type="TileMap" parent="."]
@@ -866,7 +872,7 @@ scale = Vector2( 0.1, 0.1 )
 z_index = -1
 tile_set = SubResource( 42 )
 format = 1
-tile_data = PoolIntArray( -2031401, 536870912, 0, -1244568, 536870912, 65536, -327780, 536870912, 0, -393099, 536870912, 0, -392964, 536870912, 0 )
+tile_data = PoolIntArray( -1244568, 536870912, 65536, -327780, 536870912, 0, -393099, 536870912, 0, -393030, 0, 0, -392964, 536870912, 0 )
 
 [node name="Walls" type="Node2D" parent="."]
 position = Vector2( 0, 1000 )
@@ -1071,16 +1077,60 @@ shape = SubResource( 50 )
 position = Vector2( 2787, -702 )
 shape = SubResource( 14 )
 
-[node name="platforms" type="Node2D" parent="."]
+[node name="Checkpoints" type="Node2D" parent="."]
 
-[node name="area1" type="Area2D" parent="platforms"]
+[node name="ice1" type="Area2D" parent="Checkpoints"]
+position = Vector2( 756, -24 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/ice1"]
+shape = SubResource( 65 )
+
+[node name="ice2" type="Area2D" parent="Checkpoints"]
+position = Vector2( 1196, -24 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/ice2"]
+shape = SubResource( 65 )
+
+[node name="ice3" type="Area2D" parent="Checkpoints"]
+position = Vector2( 1620, -24 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/ice3"]
+shape = SubResource( 65 )
+
+[node name="fire1" type="Area2D" parent="Checkpoints"]
+position = Vector2( 756, 976 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/fire1"]
+shape = SubResource( 65 )
+
+[node name="fire2" type="Area2D" parent="Checkpoints"]
+position = Vector2( 1196, 976 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/fire2"]
+shape = SubResource( 65 )
+
+[node name="fire3" type="Area2D" parent="Checkpoints"]
+position = Vector2( 1620, 976 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/fire3"]
+shape = SubResource( 65 )
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="area1" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area1"]
 position = Vector2( 2304.29, -1.47937 )
 shape = SubResource( 51 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area1/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area1/CollisionShape2D"]
 visible = false
 position = Vector2( -2304, 0 )
 tile_set = ExtResource( 2 )
@@ -1088,14 +1138,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 8192142, 1, 65540, 8192143, 1, 65541, 8192144, 1, 65541, 8192145, 1, 65542 )
 
-[node name="area2" type="Area2D" parent="platforms"]
+[node name="area2" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area2"]
 position = Vector2( 2416.27, -3.00316 )
 shape = SubResource( 52 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area2/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area2/CollisionShape2D"]
 visible = false
 position = Vector2( -2416, 0 )
 tile_set = ExtResource( 2 )
@@ -1103,14 +1153,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 8192149, 1, 65540, 8192150, 1, 65541, 8192151, 1, 65541, 8192152, 1, 65542 )
 
-[node name="area3" type="Area2D" parent="platforms"]
+[node name="area3" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area3"]
 position = Vector2( 2521.34, -2.84294 )
 shape = SubResource( 53 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area3/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area3/CollisionShape2D"]
 visible = false
 position = Vector2( -2520, 0 )
 tile_set = ExtResource( 2 )
@@ -1118,14 +1168,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 1114155, 1, 65540, 1114156, 1, 65541, 1114157, 1, 65541, 1114158, 1, 65541, 1114159, 1, 65542, 8192155, 1, 65540, 8192156, 1, 65541, 8192157, 1, 65541, 8192158, 1, 65541, 8192159, 1, 65542 )
 
-[node name="area4" type="Area2D" parent="platforms"]
+[node name="area4" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area4"]
 position = Vector2( 2609.7, -48.7331 )
 shape = SubResource( 54 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area4/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area4/CollisionShape2D"]
 visible = false
 position = Vector2( -2609.7, 48.7331 )
 tile_set = ExtResource( 2 )
@@ -1133,14 +1183,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 7798945, 1, 65540, 7798946, 1, 65541, 7798947, 1, 65541, 7798948, 1, 65542 )
 
-[node name="area5" type="Area2D" parent="platforms"]
+[node name="area5" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area5"]
 position = Vector2( 2607.97, 47 )
 shape = SubResource( 55 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area5/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area5/CollisionShape2D"]
 visible = false
 position = Vector2( -2607.97, -47 )
 tile_set = ExtResource( 2 )
@@ -1148,14 +1198,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 8585377, 1, 65540, 8585378, 1, 65541, 8585379, 1, 65541, 8585380, 1, 65542 )
 
-[node name="area6" type="Area2D" parent="platforms"]
+[node name="area6" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area6"]
 position = Vector2( 2671.89, -98.6167 )
 shape = SubResource( 56 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area6/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area6/CollisionShape2D"]
 visible = false
 position = Vector2( -2671.89, 98.6167 )
 tile_set = ExtResource( 2 )
@@ -1163,14 +1213,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 7405733, 1, 65540, 7405734, 1, 65541, 7405735, 1, 65541, 7405736, 1, 65542 )
 
-[node name="area7" type="Area2D" parent="platforms"]
+[node name="area7" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area7"]
 position = Vector2( 2682.01, 93.1982 )
 shape = SubResource( 57 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area7/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area7/CollisionShape2D"]
 visible = false
 position = Vector2( -2682.01, -93.1982 )
 tile_set = ExtResource( 2 )
@@ -1178,14 +1228,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 8978598, 1, 65540, 8978599, 1, 65541, 8978600, 1, 65542 )
 
-[node name="area8" type="Area2D" parent="platforms"]
+[node name="area8" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area8"]
 position = Vector2( 2752, 46.498 )
 shape = SubResource( 58 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area8/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area8/CollisionShape2D"]
 visible = false
 position = Vector2( -2752, -46.498 )
 tile_set = ExtResource( 2 )
@@ -1193,14 +1243,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 8585386, 1, 65540, 8585387, 1, 65541, 8585388, 1, 65541, 8585389, 1, 65542 )
 
-[node name="area9" type="Area2D" parent="platforms"]
+[node name="area9" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area9"]
 position = Vector2( 2817.98, -50.6008 )
 shape = SubResource( 59 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area9/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area9/CollisionShape2D"]
 visible = false
 position = Vector2( -2817.98, 50.6008 )
 tile_set = ExtResource( 2 )
@@ -1208,14 +1258,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 7798958, 1, 65540, 7798959, 1, 65541, 7798960, 1, 65541, 7798961, 1, 65542 )
 
-[node name="area10" type="Area2D" parent="platforms"]
+[node name="area10" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area10"]
 position = Vector2( 2863.44, 44.5625 )
 shape = SubResource( 60 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area10/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area10/CollisionShape2D"]
 visible = false
 position = Vector2( -2863.44, -44.5625 )
 tile_set = ExtResource( 2 )
@@ -1223,14 +1273,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 8585393, 1, 65540, 8585394, 1, 65541, 8585395, 1, 65541, 8585396, 1, 65542 )
 
-[node name="area11" type="Area2D" parent="platforms"]
+[node name="area11" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area11"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area11"]
 position = Vector2( 2913.46, -82.7627 )
 shape = SubResource( 61 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area11/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area11/CollisionShape2D"]
 visible = false
 position = Vector2( -2913.46, 82.7627 )
 tile_set = ExtResource( 2 )
@@ -1238,14 +1288,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 7536820, 1, 65540, 7536821, 1, 65541, 7536822, 1, 65541, 7536823, 1, 65542 )
 
-[node name="area12" type="Area2D" parent="platforms"]
+[node name="area12" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area12"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area12"]
 position = Vector2( 2920.02, 12.5714 )
 shape = SubResource( 62 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area12/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area12/CollisionShape2D"]
 visible = false
 position = Vector2( -2920.02, -12.5714 )
 tile_set = ExtResource( 2 )
@@ -1253,14 +1303,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 8323253, 1, 65540, 8323254, 1, 65541, 8323255, 1, 65542 )
 
-[node name="area13" type="Area2D" parent="platforms"]
+[node name="area13" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area13"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area13"]
 position = Vector2( 2968.83, -19.3334 )
 shape = SubResource( 63 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area13/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area13/CollisionShape2D"]
 visible = false
 position = Vector2( -2968.83, 19.3334 )
 tile_set = ExtResource( 2 )
@@ -1268,14 +1318,14 @@ cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 8061112, 1, 65540, 8061113, 1, 65541, 8061114, 1, 65542 )
 
-[node name="area14" type="Area2D" parent="platforms"]
+[node name="area14" type="Area2D" parent="Platforms"]
 script = ExtResource( 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/area14"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area14"]
 position = Vector2( 3008, -96.8346 )
 shape = SubResource( 64 )
 
-[node name="platformmap" type="TileMap" parent="platforms/area14/CollisionShape2D"]
+[node name="platformmap" type="TileMap" parent="Platforms/area14/CollisionShape2D"]
 visible = false
 position = Vector2( -3008, 96.8346 )
 tile_set = ExtResource( 2 )
@@ -1288,17 +1338,23 @@ tile_data = PoolIntArray( 7405754, 1, 65540, 7405755, 1, 65541, 7405756, 1, 6554
 [connection signal="body_shape_entered" from="Walls/Area2D2" to="Walls/Area2D2" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="Walls/Area2D3" to="Walls/Area2D3" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="Death Collides2" to="Walls/Area2D" method="_on_Death_Collides_body_shape_entered"]
-[connection signal="body_shape_entered" from="platforms/area1" to="platforms/area1" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area2" to="platforms/area2" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area3" to="platforms/area3" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area4" to="platforms/area4" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area5" to="platforms/area5" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area6" to="platforms/area6" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area7" to="platforms/area7" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area8" to="platforms/area8" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area9" to="platforms/area9" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area10" to="platforms/area10" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area11" to="platforms/area11" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area12" to="platforms/area12" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area13" to="platforms/area13" method="_on_platform_hit"]
-[connection signal="body_shape_entered" from="platforms/area14" to="platforms/area14" method="_on_platform_hit"]
+[connection signal="body_entered" from="Checkpoints/ice1" to="Checkpoints/ice1" method="_on_checkpoint"]
+[connection signal="body_entered" from="Checkpoints/ice2" to="Checkpoints/ice2" method="_on_checkpoint"]
+[connection signal="body_entered" from="Checkpoints/ice3" to="Checkpoints/ice3" method="_on_checkpoint"]
+[connection signal="body_entered" from="Checkpoints/fire1" to="Checkpoints/fire1" method="_on_checkpoint"]
+[connection signal="body_entered" from="Checkpoints/fire2" to="Checkpoints/fire2" method="_on_checkpoint"]
+[connection signal="body_entered" from="Checkpoints/fire3" to="Checkpoints/fire3" method="_on_checkpoint"]
+[connection signal="body_shape_entered" from="Platforms/area1" to="Platforms/area1" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area2" to="Platforms/area2" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area3" to="Platforms/area3" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area4" to="Platforms/area4" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area5" to="Platforms/area5" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area6" to="Platforms/area6" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area7" to="Platforms/area7" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area8" to="Platforms/area8" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area9" to="Platforms/area9" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area10" to="Platforms/area10" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area11" to="Platforms/area11" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area12" to="Platforms/area12" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area13" to="Platforms/area13" method="_on_platform_hit"]
+[connection signal="body_shape_entered" from="Platforms/area14" to="Platforms/area14" method="_on_platform_hit"]

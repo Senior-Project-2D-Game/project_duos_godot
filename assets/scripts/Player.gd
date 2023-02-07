@@ -10,6 +10,7 @@ var player_state = "normal"
 var state
 var _velocity = Vector2.ZERO
 var state_machine
+var spawn = Vector2.ZERO
 
 var isIcePlayer = true
 
