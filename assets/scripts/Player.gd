@@ -84,11 +84,16 @@ func _physics_process(delta):
 					_velocity.y = 0.0
 			else:
 				state_machine.travel("ice_idle")
+				
+				if is_jumping:
+					_velocity.y = -JUMP_FORCE
+				elif is_launched:
+					_velocity.y = -JUMP_FORCE + abs(_velocity.y)/2
+				elif is_jump_cancelled:
+					_velocity.y = 0.0
 
 	_velocity = move_and_slide(_velocity, UP_DIRECTION)
 	
-	
-		
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value
 	

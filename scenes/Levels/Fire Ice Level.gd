@@ -27,11 +27,11 @@ func _ready():
 	player_arr[0].spawn = Vector2(-600,-100)
 	player_arr[1].spawn = Vector2(-600,900)
 
-	var fire_sprite = Sprite.new()				# comment for animation
-	var ice_sprite = Sprite.new()				# comment for animation	
+#	var fire_sprite = Sprite.new()				# comment for animation
+#	var ice_sprite = Sprite.new()				# comment for animation	
 
-	player_arr[0].add_child(ice_sprite)
-	player_arr[1].add_child(fire_sprite)
+#	player_arr[0].add_child(ice_sprite)
+#	player_arr[1].add_child(fire_sprite)
 
 	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[0])
 	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[1])
@@ -48,7 +48,6 @@ func _ready():
 	
 	players["2"].viewport.world_2d = players["1"].viewport.world_2d
 	for node in players.values():
-		print(node)
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
