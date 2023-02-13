@@ -41,6 +41,7 @@ func _physics_process(delta):
 		
 		if is_sliding:
 			if isIcePlayer:
+				rpc_unreliable("update_animation_frozen", Animation)				
 				state_machine.travel("ice_frozen")
 			
 			if _velocity.x != 0:
@@ -55,6 +56,7 @@ func _physics_process(delta):
 			_velocity.x = _horizontal_direction * SPEED
 			
 			if _horizontal_direction > 0:
+				rpc_unreliable("update_animation_move_right", Animation)				
 				state_machine.travel("ice_run")
 				$Sprite.flip_h = false
 				
@@ -71,6 +73,7 @@ func _physics_process(delta):
 					_velocity.y = 0.0
 					
 			elif _horizontal_direction < 0:
+				rpc_unreliable("update_animation_move_left", Animation)				
 				state_machine.travel("ice_run")
 				$Sprite.flip_h = true								
 				
@@ -83,6 +86,7 @@ func _physics_process(delta):
 				elif is_jump_cancelled:
 					_velocity.y = 0.0
 			else:
+				rpc_unreliable("update_animation_stop", Animation)
 				state_machine.travel("ice_idle")
 				
 				if is_jumping:
@@ -121,3 +125,17 @@ func _on_ice_exited(body_rid, body, body_shape_index, local_shape_index):
 	if body is KinematicBody2D:
 		body.player_state = "normal"
 
+
+remote func update_animation_move_left(animation):
+	state_machine.travel("ice_run")
+	$Sprite.flip_h = true		
+							
+remote func update_animation_move_right(animation):
+	state_machine.travel("ice_run")
+	$Sprite.flip_h = false		
+	
+remote func update_animation_stop(animation):
+	state_machine.travel("ice_idle")
+	
+remote func update_animation_frozen(animation):
+	state_machine.travel("ice_frozen")
