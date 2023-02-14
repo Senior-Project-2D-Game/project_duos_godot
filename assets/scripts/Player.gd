@@ -12,7 +12,7 @@ var _velocity = Vector2.ZERO
 var state_machine
 var spawn = Vector2.ZERO
 
-var isIcePlayer = true
+export var whichPlayer = "ice"		# players are ice by default
 
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 
@@ -40,7 +40,7 @@ func _physics_process(delta):
 		_velocity.y += GRAVITY * delta 		# jump
 		
 		if is_sliding:
-			if isIcePlayer:
+			if whichPlayer:
 				rpc_unreliable("update_animation_frozen", Animation)				
 				state_machine.travel("ice_frozen")
 			
@@ -57,13 +57,11 @@ func _physics_process(delta):
 			
 			if _horizontal_direction > 0:
 				rpc_unreliable("update_animation_move_right", Animation)				
-				state_machine.travel("ice_run")
+				if whichPlayer == "ice":
+					state_machine.travel("ice_run")
+				elif whichPlayer == "fire":
+					state_machine.travel("fire_run")	
 				$Sprite.flip_h = false
-				
-#				else:
-#					state_machine.travel("fire_run")
-				
-#				state_machine.travel("ice_turn")
 				
 				if is_jumping:
 					_velocity.y = -JUMP_FORCE
@@ -73,11 +71,12 @@ func _physics_process(delta):
 					_velocity.y = 0.0
 					
 			elif _horizontal_direction < 0:
-				rpc_unreliable("update_animation_move_left", Animation)				
-				state_machine.travel("ice_run")
+				rpc_unreliable("update_animation_move_left", Animation)		
+				if whichPlayer == "ice":
+					state_machine.travel("ice_run")
+				elif whichPlayer == "fire":
+					state_machine.travel("fire_run")			
 				$Sprite.flip_h = true								
-				
-#				state_machine.travel("ice_turn")				
 				
 				if is_jumping:
 					_velocity.y = -JUMP_FORCE
@@ -87,7 +86,10 @@ func _physics_process(delta):
 					_velocity.y = 0.0
 			else:
 				rpc_unreliable("update_animation_stop", Animation)
-				state_machine.travel("ice_idle")
+				if whichPlayer == "ice":
+					state_machine.travel("ice_idle")
+				elif whichPlayer == "fire":
+					state_machine.travel("fire_idle")	
 				
 				if is_jumping:
 					_velocity.y = -JUMP_FORCE
@@ -127,15 +129,27 @@ func _on_ice_exited(body_rid, body, body_shape_index, local_shape_index):
 
 
 remote func update_animation_move_left(animation):
-	state_machine.travel("ice_run")
+	if whichPlayer == "ice":
+		state_machine.travel("ice_run")
+	elif whichPlayer == "fire":
+		state_machine.travel("fire_run")		
 	$Sprite.flip_h = true		
 							
 remote func update_animation_move_right(animation):
-	state_machine.travel("ice_run")
+	if whichPlayer == "ice":
+		state_machine.travel("ice_run")
+	elif whichPlayer == "fire":
+		state_machine.travel("fire_run")	
 	$Sprite.flip_h = false		
 	
 remote func update_animation_stop(animation):
-	state_machine.travel("ice_idle")
+	if whichPlayer == "ice":
+		state_machine.travel("ice_idle")
+	elif whichPlayer == "fire":
+		state_machine.travel("fire_idle")
 	
 remote func update_animation_frozen(animation):
 	state_machine.travel("ice_frozen")
+
+remote func update_animation_burned(animation):
+	state_machine.travel("fire_death")

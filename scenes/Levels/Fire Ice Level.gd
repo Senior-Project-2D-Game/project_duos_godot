@@ -27,16 +27,12 @@ func _ready():
 	player_arr[0].spawn = Vector2(-600,-100)
 	player_arr[1].spawn = Vector2(-600,900)
 
-#	var fire_sprite = Sprite.new()				# comment for animation
-#	var ice_sprite = Sprite.new()				# comment for animation	
-
-#	player_arr[0].add_child(ice_sprite)
-#	player_arr[1].add_child(fire_sprite)
-
 	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[0])
 	$"VBoxContainer/ViewportContainer/Viewport/Level".add_child(player_arr[1])
 	players["1"].player = player_arr[0]
 	players["2"].player = player_arr[1]
+	players["2"].player.whichPlayer = "fire"	# changes second player animation 
+	print(players["2"].player.whichPlayer)
 	
 	var ice = $"VBoxContainer/ViewportContainer/Viewport/Level/Ice"
 	ice.connect("body_shape_entered", players["1"].player,"_on_ice_entered")
