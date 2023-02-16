@@ -14,7 +14,7 @@ func _ready():
 	elif OS.get_name() == "Android":
 		ip_address = IP.get_local_addresses()[0]
 	else:
-		ip_address = IP.get_local_addresses()[3]
+		ip_address = IP.get_local_addresses()[0]
 
 	print(IP.get_local_addresses())
 	for ip in IP.get_local_addresses():
