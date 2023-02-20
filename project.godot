@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="project_duos"
-run/main_scene="res://scenes/Network_Setup.tscn"
+run/main_scene="res://scenes/Main_menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
