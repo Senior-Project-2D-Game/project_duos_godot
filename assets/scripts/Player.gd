@@ -12,7 +12,7 @@ var _velocity = Vector2.ZERO
 var state_machine
 var spawn = Vector2.ZERO
 
-export var whichPlayer = "ice"		# players are ice by default
+var isIcePlayer = true
 
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 
@@ -40,8 +40,7 @@ func _physics_process(delta):
 		_velocity.y += GRAVITY * delta 		# jump
 		
 		if is_sliding:
-			if whichPlayer:
-				rpc_unreliable("update_animation_frozen", Animation)				
+			if isIcePlayer:
 				state_machine.travel("ice_frozen")
 			
 			if _velocity.x != 0:
@@ -56,12 +55,13 @@ func _physics_process(delta):
 			_velocity.x = _horizontal_direction * SPEED
 			
 			if _horizontal_direction > 0:
-				rpc_unreliable("update_animation_move_right", Animation)				
-				if whichPlayer == "ice":
-					state_machine.travel("ice_run")
-				elif whichPlayer == "fire":
-					state_machine.travel("fire_run")	
+				state_machine.travel("ice_run")
 				$Sprite.flip_h = false
+				
+#				else:
+#					state_machine.travel("fire_run")
+				
+#				state_machine.travel("ice_turn")
 				
 				if is_jumping:
 					_velocity.y = -JUMP_FORCE
@@ -71,12 +71,10 @@ func _physics_process(delta):
 					_velocity.y = 0.0
 					
 			elif _horizontal_direction < 0:
-				rpc_unreliable("update_animation_move_left", Animation)		
-				if whichPlayer == "ice":
-					state_machine.travel("ice_run")
-				elif whichPlayer == "fire":
-					state_machine.travel("fire_run")			
+				state_machine.travel("ice_run")
 				$Sprite.flip_h = true								
+				
+#				state_machine.travel("ice_turn")				
 				
 				if is_jumping:
 					_velocity.y = -JUMP_FORCE
@@ -85,21 +83,12 @@ func _physics_process(delta):
 				elif is_jump_cancelled:
 					_velocity.y = 0.0
 			else:
-				rpc_unreliable("update_animation_stop", Animation)
-				if whichPlayer == "ice":
-					state_machine.travel("ice_idle")
-				elif whichPlayer == "fire":
-					state_machine.travel("fire_idle")	
-				
-				if is_jumping:
-					_velocity.y = -JUMP_FORCE
-				elif is_launched:
-					_velocity.y = -JUMP_FORCE + abs(_velocity.y)/2
-				elif is_jump_cancelled:
-					_velocity.y = 0.0
+				state_machine.travel("ice_idle")
 
 	_velocity = move_and_slide(_velocity, UP_DIRECTION)
 	
+	
+		
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value
 	
@@ -127,29 +116,3 @@ func _on_ice_exited(body_rid, body, body_shape_index, local_shape_index):
 	if body is KinematicBody2D:
 		body.player_state = "normal"
 
-
-remote func update_animation_move_left(animation):
-	if whichPlayer == "ice":
-		state_machine.travel("ice_run")
-	elif whichPlayer == "fire":
-		state_machine.travel("fire_run")		
-	$Sprite.flip_h = true		
-							
-remote func update_animation_move_right(animation):
-	if whichPlayer == "ice":
-		state_machine.travel("ice_run")
-	elif whichPlayer == "fire":
-		state_machine.travel("fire_run")	
-	$Sprite.flip_h = false		
-	
-remote func update_animation_stop(animation):
-	if whichPlayer == "ice":
-		state_machine.travel("ice_idle")
-	elif whichPlayer == "fire":
-		state_machine.travel("fire_idle")
-	
-remote func update_animation_frozen(animation):
-	state_machine.travel("ice_frozen")
-
-remote func update_animation_burned(animation):
-	state_machine.travel("fire_death")

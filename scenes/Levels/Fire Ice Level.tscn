@@ -13,10 +13,10 @@ custom_constants/separation = 0
 
 [node name="ViewportContainer" type="ViewportContainer" parent="VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 295.0
+margin_bottom = 520.0
 
 [node name="Viewport" type="Viewport" parent="VBoxContainer/ViewportContainer"]
-size = Vector2( 1024, 295 )
+size = Vector2( 1920, 520 )
 handle_input_locally = false
 hdr = false
 usage = 0
@@ -36,18 +36,18 @@ drag_margin_top = 0.5
 drag_margin_right = 0.4
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
-margin_top = 295.0
+margin_top = 520.0
 margin_right = 1920.0
-margin_bottom = 305.0
+margin_bottom = 530.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="VBoxContainer"]
-margin_top = 305.0
+margin_top = 530.0
 margin_right = 1920.0
-margin_bottom = 595.0
+margin_bottom = 1050.0
 
 [node name="Viewport" type="Viewport" parent="VBoxContainer/ViewportContainer2"]
-size = Vector2( 1024, 290 )
+size = Vector2( 1920, 520 )
 handle_input_locally = false
 hdr = false
 usage = 0
