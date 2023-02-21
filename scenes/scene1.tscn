@@ -13,8 +13,7 @@
 [ext_resource path="res://assets/tiles/checkpoint.png" type="Texture" id=11]
 [ext_resource path="res://assets/scripts/Area2D.gd" type="Script" id=12]
 
-
-[sub_resource type="TileSet" id=9]
+[sub_resource type="TileSet" id=1]
 0/name = "fback2.png 0"
 0/texture = ExtResource( 8 )
 0/tex_offset = Vector2( 0, 0 )
@@ -79,7 +78,7 @@
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="TileSet" id=10]
+[sub_resource type="TileSet" id=2]
 0/name = "mountains2.png 0"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
@@ -144,124 +143,124 @@
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 24, 52 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 9 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 9 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 9 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 9 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 9 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 9 )
 region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 9 )
 region = Rect2( 224, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 9 )
 region = Rect2( 256, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 9 )
 region = Rect2( 288, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 9 )
 region = Rect2( 320, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 9 )
 region = Rect2( 352, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 9 )
 region = Rect2( 384, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 9 )
 region = Rect2( 416, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 9 )
 region = Rect2( 448, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 9 )
 region = Rect2( 480, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 9 )
 region = Rect2( 512, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 9 )
 region = Rect2( 544, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 9 )
 region = Rect2( 576, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 9 )
 region = Rect2( 608, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 9 )
 region = Rect2( 640, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 9 )
 region = Rect2( 672, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=33]
+[sub_resource type="SpriteFrames" id=26]
 animations = [ {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
 "name": "default",
 "speed": 7.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 152, 4 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 112, 4 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 76, 4 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 68, 4 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 20, 4 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 116, 4 )
 
-[sub_resource type="TileSet" id=34]
+[sub_resource type="TileSet" id=33]
 0/name = "placeholder.png 0"
 0/texture = ExtResource( 10 )
 0/tex_offset = Vector2( 0, 0 )
@@ -284,7 +283,7 @@ extents = Vector2( 116, 4 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="TileSet" id=35]
+[sub_resource type="TileSet" id=34]
 0/name = "checkpoint.png 0"
 0/texture = ExtResource( 11 )
 0/tex_offset = Vector2( 0, 0 )
@@ -307,7 +306,7 @@ extents = Vector2( 116, 4 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 10, 69.0007 )
 
 [sub_resource type="RectangleShape2D" id=36]
@@ -324,14 +323,14 @@ format = 1
 [node name="sky" type="TileMap" parent="background"]
 scale = Vector2( 5, 5 )
 z_index = -3
-tile_set = SubResource( 9 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -131078, 1, 0, -131077, 1, 0, -131076, 1, 1, -131075, 1, 4, -131074, 1, 1, -131073, 1, 1, -196608, 1, 0, -196607, 1, 1, -196606, 1, 4, -196605, 1, 1, -196604, 1, 1, -196603, 1, 0, -196602, 1, 1, -196601, 1, 4, -196600, 1, 1, -196599, 1, 1, -196598, 1, 0, -196597, 1, 1, -196596, 1, 4, -196595, 1, 1, -196594, 1, 1, -196593, 1, 1, -196592, 1, 0, -196591, 1, 1, -196590, 1, 4, -196589, 1, 1, -196588, 1, 1, -196587, 1, 0, -196586, 1, 1, -196585, 1, 4, -196584, 1, 1, -65542, 1610612736, 2, -65541, 1610612736, 1, -65540, 1073741824, 4, -65539, 1610612736, 4, -65538, 1073741824, 3, -65537, 1610612736, 1, -131072, 1610612736, 2, -131071, 1073741824, 2, -131070, 1610612736, 4, -131069, 1610612736, 2, -131068, 1073741824, 2, -131067, 1610612736, 4, -131066, 1073741824, 2, -131065, 1073741824, 3, -131064, 1073741824, 3, -131063, 1610612736, 2, -131062, 1610612736, 1, -131061, 1073741824, 3, -131060, 1073741824, 2, -131059, 1073741824, 3, -131058, 1610612736, 2, -131057, 1610612736, 1, -131056, 1073741824, 3, -131055, 1073741824, 2, -131054, 1073741824, 3, -131053, 1610612736, 2, -131052, 1610612736, 1, -131051, 1073741824, 3, -131050, 1073741824, 2, -131049, 1073741824, 3, -131048, 1610612736, 2, -6, 2, 65539, -5, 536870914, 65540, -4, 2, 65536, -3, 536870914, 65539, -2, 2, 65539, -1, 536870914, 65537, -65536, 2, 65536, -65535, 536870914, 65539, -65534, 2, 65539, -65533, 2, 65539, -65532, 536870914, 65537, -65531, 2, 65536, -65530, 2, 65539, -65529, 536870914, 65537, -65528, 2, 65536, -65527, 2, 65539, -65526, 536870914, 65537, -65525, 2, 65536, -65524, 2, 65539, -65523, 536870914, 65537, -65522, 2, 65536, -65521, 2, 65539, -65520, 536870914, 65537, -65519, 2, 65536, -65518, 2, 65539, -65517, 2, 65539, -65516, 536870914, 65537, -65515, 2, 65536, -65514, 536870914, 65539, -65513, 536870914, 65539, -65512, 2, 65539, 65530, 2, 65539, 65531, 2, 65539, 65532, 2, 65539, 65533, 2, 65539, 65534, 2, 65539, 65535, 2, 65539, 0, 2, 65539, 1, 2, 65539, 2, 2, 65539, 3, 2, 65539, 4, 2, 65539, 5, 2, 65539, 6, 2, 65539, 7, 2, 65539, 8, 2, 65539, 9, 2, 65539, 10, 2, 65539, 11, 2, 65539, 12, 2, 65539, 13, 2, 65539, 14, 2, 65539, 15, 2, 65539, 16, 2, 65539, 17, 2, 65539, 18, 2, 65539, 19, 2, 65539, 20, 2, 65539, 21, 2, 65539, 22, 2, 65539 )
 
 [node name="mountains" type="TileMap" parent="background"]
 scale = Vector2( 5, 5 )
-tile_set = SubResource( 10 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 65530, 536870914, 1, 65531, 536870914, 1, 65533, 2, 3, 11, 536870914, 3, 12, 1073741826, 3, 13, 2, 3, 14, 536870914, 3, 15, 1073741826, 3, 16, 2, 3, 17, 1073741826, 3, 18, 2, 3, 19, 2, 3, 20, 2, 3, 21, 2, 3, 22, 2, 3, 131066, 2, 3, 131067, 536870914, 4, 131068, 2, 3, 131069, 2, 3, 131070, 2, 3, 131071, 2, 3, 65536, 2, 3, 65537, 2, 3, 65538, 2, 3, 65539, 2, 3, 65540, 2, 3, 65541, 2, 3, 65542, 2, 3, 65543, 2, 3, 65544, 2, 3, 65545, 2, 3, 65546, 2, 3, 65547, 2, 3, 65548, 2, 3, 65549, 2, 3, 65550, 2, 3, 65551, 536870914, 1, 65552, 536870914, 1, 65553, 536870914, 1, 65554, 536870914, 1, 65555, 536870914, 1, 65556, 536870914, 1, 65557, 536870914, 1, 65558, 536870914, 1, 196602, 2, 65539, 196604, 536870914, 65538 )
@@ -370,7 +369,7 @@ zoom = Vector2( 0.5, 0.5 )
 position = Vector2( -312, -48 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Launcher"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -378,13 +377,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Launcher/CollisionShape2D"]
 position = Vector2( -1, 10 )
 scale = Vector2( 2.5, 2.5 )
-frames = SubResource( 33 )
-frame = 21
+frames = SubResource( 26 )
+frame = 6
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Launcher"]
 position = Vector2( 752, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -392,13 +391,13 @@ __meta__ = {
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Launcher/CollisionShape2D2"]
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
-frames = SubResource( 33 )
-frame = 17
+frames = SubResource( 26 )
+frame = 2
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Launcher"]
 position = Vector2( 1176, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -406,42 +405,42 @@ __meta__ = {
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Launcher/CollisionShape2D3"]
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
-frames = SubResource( 33 )
-frame = 6
+frames = SubResource( 26 )
+frame = 13
 playing = true
 
 [node name="Ice" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ice"]
 position = Vector2( -112, -3 )
-shape = SubResource( 2 )
+shape = SubResource( 27 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ice"]
 position = Vector2( 248, -4 )
-shape = SubResource( 3 )
+shape = SubResource( 28 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ice"]
 position = Vector2( 580, -4 )
-shape = SubResource( 4 )
+shape = SubResource( 29 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Ice"]
 position = Vector2( 988, -4 )
-shape = SubResource( 5 )
+shape = SubResource( 30 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Ice"]
 position = Vector2( 988, -4 )
-shape = SubResource( 5 )
+shape = SubResource( 30 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Ice"]
 position = Vector2( 1108, -4 )
-shape = SubResource( 6 )
+shape = SubResource( 31 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Ice"]
 position = Vector2( 1388, -4 )
-shape = SubResource( 7 )
+shape = SubResource( 32 )
 
 [node name="placeholders" type="TileMap" parent="."]
-tile_set = SubResource( 34 )
+tile_set = SubResource( 33 )
 cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( -1638309, 0, 0, -1638308, 536870912, 0, -1114030, 0, 0, -1114029, 536870912, 0, -982965, 0, 0, -982964, 536870912, 0, -982961, 0, 0, -982960, 536870912, 0 )
@@ -450,7 +449,7 @@ tile_data = PoolIntArray( -1638309, 0, 0, -1638308, 536870912, 0, -1114030, 0, 0
 position = Vector2( -136, -104 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
-tile_set = SubResource( 35 )
+tile_set = SubResource( 34 )
 format = 1
 tile_data = PoolIntArray( -2031401, 536870912, 0, -1244568, 536870912, 65536, -327780, 536870912, 0, -393099, 536870912, 0, -392964, 536870912, 0 )
 
@@ -462,7 +461,7 @@ script = ExtResource( 12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D"]
 position = Vector2( 703.989, -68.9992 )
 rotation = 0.000185491
-shape = SubResource( 8 )
+shape = SubResource( 35 )
 
 [node name="melt_wall_tilemap" type="TileMap" parent="Walls/Area2D/CollisionShape2D"]
 position = Vector2( -703.976, 69.1298 )
@@ -498,7 +497,6 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -851874, -2147483647, 131075, -851873, 1, 131073, -851872, -1610612735, 131075, -786338, -1073741823, 131073, -786337, -1073741823, 131072, -786336, -1610612735, 131073, -720802, -1073741823, 131073, -720801, -1073741823, 131074, -720800, -1610612735, 131073, -655266, -1073741823, 131073, -655265, -1610612735, 131074, -655264, -1610612735, 131073, -589730, -1073741823, 131073, -589729, -1073741823, 131074, -589728, -1610612735, 131073, -524194, -1073741823, 131073, -524193, -1073741823, 131072, -524192, -1610612735, 131073, -458658, -1073741823, 131073, -458657, -1073741823, 131072, -458656, -1610612735, 131073, -393122, -1073741823, 131073, -393121, -1073741823, 131074, -393120, -1610612735, 131073, -327586, -1073741823, 131073, -327585, -1610612735, 131074, -327584, -1610612735, 131073, -262050, -1073741823, 131073, -262049, -1073741823, 131074, -262048, -1610612735, 131073, -196514, -1073741823, 131073, -196513, -1073741823, 131072, -196512, -1610612735, 131073, -130978, -1073741823, 131073, -130977, -1073741823, 2, -130976, -1610612735, 131073, -65442, -1073741823, 131073, -65441, -1073741823, 0, -65440, -1610612735, 131073 )
-
 [connection signal="body_shape_entered" from="Launcher" to="Player" method="_on_launcher_entered"]
 [connection signal="body_shape_exited" from="Launcher" to="Player" method="_on_launcher_exited"]
 [connection signal="body_shape_entered" from="Ice" to="Player" method="_on_ice_entered"]

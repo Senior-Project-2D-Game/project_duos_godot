@@ -631,49 +631,49 @@ extents = Vector2( 117.5, 50 )
 [sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 126, 82 )
 
-[sub_resource type="RectangleShape2D" id=65]
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 15.9606, 23.6641 )
 
-[sub_resource type="RectangleShape2D" id=51]
+[sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 26.2854, 5.33333 )
 
-[sub_resource type="RectangleShape2D" id=52]
+[sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 26.2678, 5.28542 )
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=54]
 extents = Vector2( 32.0716, 8 )
 
-[sub_resource type="RectangleShape2D" id=54]
+[sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 23.9916, 5.33984 )
 
-[sub_resource type="RectangleShape2D" id=55]
+[sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 24, 6 )
 
-[sub_resource type="RectangleShape2D" id=56]
+[sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 24.5002, 5.75 )
 
-[sub_resource type="RectangleShape2D" id=57]
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 16, 5.33333 )
 
-[sub_resource type="RectangleShape2D" id=58]
+[sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 25.0669, 7.5 )
 
-[sub_resource type="RectangleShape2D" id=59]
+[sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 23.9817, 5.16748 )
 
-[sub_resource type="RectangleShape2D" id=60]
+[sub_resource type="RectangleShape2D" id=61]
 extents = Vector2( 23.9996, 5.43751 )
 
-[sub_resource type="RectangleShape2D" id=61]
+[sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 22.9668, 5.33318 )
 
-[sub_resource type="RectangleShape2D" id=62]
+[sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 16, 5.42865 )
 
-[sub_resource type="RectangleShape2D" id=63]
+[sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 14.8325, 5.33336 )
 
-[sub_resource type="RectangleShape2D" id=64]
+[sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 24, 2.83464 )
 
 [node name="Node2D" type="Node2D"]
@@ -827,7 +827,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Launcher/CollisionShape2D"]
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 40 )
-frame = 20
+frame = 12
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Launcher"]
@@ -841,7 +841,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 40 )
-frame = 16
+frame = 8
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Launcher"]
@@ -855,7 +855,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 40 )
-frame = 5
+frame = 19
 playing = true
 
 [node name="placeholders2" type="TileMap" parent="."]
@@ -1084,42 +1084,42 @@ position = Vector2( 756, -24 )
 script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/ice1"]
-shape = SubResource( 65 )
+shape = SubResource( 51 )
 
 [node name="ice2" type="Area2D" parent="Checkpoints"]
 position = Vector2( 1196, -24 )
 script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/ice2"]
-shape = SubResource( 65 )
+shape = SubResource( 51 )
 
 [node name="ice3" type="Area2D" parent="Checkpoints"]
 position = Vector2( 1620, -24 )
 script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/ice3"]
-shape = SubResource( 65 )
+shape = SubResource( 51 )
 
 [node name="fire1" type="Area2D" parent="Checkpoints"]
 position = Vector2( 756, 976 )
 script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/fire1"]
-shape = SubResource( 65 )
+shape = SubResource( 51 )
 
 [node name="fire2" type="Area2D" parent="Checkpoints"]
 position = Vector2( 1196, 976 )
 script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/fire2"]
-shape = SubResource( 65 )
+shape = SubResource( 51 )
 
 [node name="fire3" type="Area2D" parent="Checkpoints"]
 position = Vector2( 1620, 976 )
 script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/fire3"]
-shape = SubResource( 65 )
+shape = SubResource( 51 )
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -1128,7 +1128,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area1"]
 position = Vector2( 2304.29, -1.47937 )
-shape = SubResource( 51 )
+shape = SubResource( 52 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area1/CollisionShape2D"]
 visible = false
@@ -1143,7 +1143,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area2"]
 position = Vector2( 2416.27, -3.00316 )
-shape = SubResource( 52 )
+shape = SubResource( 53 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area2/CollisionShape2D"]
 visible = false
@@ -1158,7 +1158,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area3"]
 position = Vector2( 2521.34, -2.84294 )
-shape = SubResource( 53 )
+shape = SubResource( 54 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area3/CollisionShape2D"]
 visible = false
@@ -1173,7 +1173,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area4"]
 position = Vector2( 2609.7, -48.7331 )
-shape = SubResource( 54 )
+shape = SubResource( 55 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area4/CollisionShape2D"]
 visible = false
@@ -1188,7 +1188,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area5"]
 position = Vector2( 2607.97, 47 )
-shape = SubResource( 55 )
+shape = SubResource( 56 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area5/CollisionShape2D"]
 visible = false
@@ -1203,7 +1203,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area6"]
 position = Vector2( 2671.89, -98.6167 )
-shape = SubResource( 56 )
+shape = SubResource( 57 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area6/CollisionShape2D"]
 visible = false
@@ -1218,7 +1218,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area7"]
 position = Vector2( 2682.01, 93.1982 )
-shape = SubResource( 57 )
+shape = SubResource( 58 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area7/CollisionShape2D"]
 visible = false
@@ -1233,7 +1233,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area8"]
 position = Vector2( 2752, 46.498 )
-shape = SubResource( 58 )
+shape = SubResource( 59 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area8/CollisionShape2D"]
 visible = false
@@ -1248,7 +1248,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area9"]
 position = Vector2( 2817.98, -50.6008 )
-shape = SubResource( 59 )
+shape = SubResource( 60 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area9/CollisionShape2D"]
 visible = false
@@ -1263,7 +1263,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area10"]
 position = Vector2( 2863.44, 44.5625 )
-shape = SubResource( 60 )
+shape = SubResource( 61 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area10/CollisionShape2D"]
 visible = false
@@ -1278,7 +1278,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area11"]
 position = Vector2( 2913.46, -82.7627 )
-shape = SubResource( 61 )
+shape = SubResource( 62 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area11/CollisionShape2D"]
 visible = false
@@ -1293,7 +1293,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area12"]
 position = Vector2( 2920.02, 12.5714 )
-shape = SubResource( 62 )
+shape = SubResource( 63 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area12/CollisionShape2D"]
 visible = false
@@ -1308,7 +1308,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area13"]
 position = Vector2( 2968.83, -19.3334 )
-shape = SubResource( 63 )
+shape = SubResource( 64 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area13/CollisionShape2D"]
 visible = false
@@ -1323,7 +1323,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/area14"]
 position = Vector2( 3008, -96.8346 )
-shape = SubResource( 64 )
+shape = SubResource( 65 )
 
 [node name="platformmap" type="TileMap" parent="Platforms/area14/CollisionShape2D"]
 visible = false
@@ -1332,7 +1332,6 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 7405754, 1, 65540, 7405755, 1, 65541, 7405756, 1, 65541, 7405757, 1, 65542 )
-
 [connection signal="body_shape_entered" from="Death Collides" to="Walls/Area2D" method="_on_Death_Collides_body_shape_entered"]
 [connection signal="body_shape_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="Walls/Area2D2" to="Walls/Area2D2" method="_on_Area2D_body_shape_entered"]
