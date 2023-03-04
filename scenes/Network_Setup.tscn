@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scenes/Network_setup.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/Network_setup.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/tiles/skytop3.png" type="Texture" id=3]
 [ext_resource path="res://assets/tiles/dark_bg2.png" type="Texture" id=4]
@@ -176,6 +176,7 @@ margin_bottom = 15.5
 custom_fonts/font = SubResource( 7 )
 text = "START GAME"
 align = 1
+
 [connection signal="pressed" from="Multiplayer_config/Host_Server" to="." method="_on_Host_Server_pressed"]
 [connection signal="pressed" from="Multiplayer_config/set_to_local" to="." method="_on_set_to_local_pressed"]
 [connection signal="pressed" from="Multiplayer_config/Join_Server" to="." method="_on_Join_Server_pressed"]

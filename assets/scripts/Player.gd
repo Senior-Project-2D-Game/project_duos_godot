@@ -11,30 +11,45 @@ var state
 var _velocity = Vector2.ZERO
 var state_machine
 var spawn = Vector2.ZERO
-
+export var controller_index = 1
+var controls = {"left" : 14, "right"  : 15, "jump" : 0, "pause" : 1}
 export var whichPlayer = "ice"		# players are ice by default
-
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
-
 onready var tween = $Tween
 
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+	if !Global.splitscreen:
+		add_inputs()
+
+func add_inputs():
+	var ev
+	var action
+	for action_name in controls:
+		action = action_name + str(controller_index)
+		if not InputMap.has_action(action):
+			InputMap.add_action(action)
+			
+		ev = InputEventJoypadButton.new()
+		ev.button_index = controls[action_name]
+		ev.set_device(controller_index)
+		InputMap.action_add_event(action, ev)
+		print(InputMap.get_action_list(action)) 
 
 func _physics_process(delta):
-	if is_network_master():
+	if Global.splitscreen or is_network_master():
 		var current = state_machine.get_current_node()
 		var is_falling = _velocity.y > 0.0 and not is_on_floor()
-		var is_jumping = Input.is_action_just_pressed("p1_jump") and is_on_floor()
-		var is_jump_cancelled = Input.is_action_just_released("p1_jump") and _velocity.y < 0.0
+		var is_jumping = Input.is_action_just_pressed("jump" + str(controller_index)) and is_on_floor()
+		var is_jump_cancelled = Input.is_action_just_released("jump" + str(controller_index)) and _velocity.y < 0.0
 		var is_idling = is_on_floor() and is_zero_approx(_velocity.x)
 		var is_running = is_on_floor() and not is_zero_approx(_velocity.x)
 		var is_launched = player_state == "launched"
 		var is_sliding = player_state == "sliding"
 
 		var _horizontal_direction = (
-			Input.get_action_strength("p1_move_right")
-			- Input.get_action_strength("p1_move_left")
+			Input.get_action_strength("right" + str(controller_index))
+			- Input.get_action_strength("left" + str(controller_index))
 		)
 		
 		_velocity.y += GRAVITY * delta 		# jump

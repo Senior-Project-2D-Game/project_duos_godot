@@ -48,5 +48,6 @@ custom_fonts/font = SubResource( 1 )
 text = "ONLINE"
 align = 1
 valign = 1
+
 [connection signal="pressed" from="Main_menu/Splitscreen_Btn" to="." method="_on_Splitscreen_Btn_pressed"]
 [connection signal="pressed" from="Main_menu/Online_Btn" to="." method="_on_Online_Btn_pressed"]

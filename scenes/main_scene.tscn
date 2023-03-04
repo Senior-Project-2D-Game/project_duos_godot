@@ -827,7 +827,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Launcher/CollisionShape2D"]
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 40 )
-frame = 12
+frame = 16
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Launcher"]
@@ -841,7 +841,7 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 40 )
-frame = 8
+frame = 12
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Launcher"]
@@ -855,7 +855,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 40 )
-frame = 19
+frame = 1
 playing = true
 
 [node name="placeholders2" type="TileMap" parent="."]
@@ -1332,6 +1332,7 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 8 )
 format = 1
 tile_data = PoolIntArray( 7405754, 1, 65540, 7405755, 1, 65541, 7405756, 1, 65541, 7405757, 1, 65542 )
+
 [connection signal="body_shape_entered" from="Death Collides" to="Walls/Area2D" method="_on_Death_Collides_body_shape_entered"]
 [connection signal="body_shape_entered" from="Walls/Area2D" to="Walls/Area2D" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_shape_entered" from="Walls/Area2D2" to="Walls/Area2D2" method="_on_Area2D_body_shape_entered"]
