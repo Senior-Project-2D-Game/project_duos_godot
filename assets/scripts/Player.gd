@@ -168,3 +168,9 @@ remote func update_animation_frozen(animation):
 
 remote func update_animation_burned(animation):
 	state_machine.travel("fire_death")
+
+remote func update_animation_look_up_fire(animation):
+	state_machine.travel("fire_look_up")
+
+remote func update_animation_look_down_ice(animation):
+	state_machine.travel("ice_look_down")

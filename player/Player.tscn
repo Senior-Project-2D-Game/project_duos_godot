@@ -1,6 +1,6 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://assets/animations/character_sheet.png" type="Texture" id=1]
+[ext_resource path="res://assets/animations/fire_ice_char.png" type="Texture" id=1]
 [ext_resource path="res://assets/scripts/Player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -16,6 +16,9 @@ animation = "fire_death"
 [sub_resource type="AnimationNodeAnimation" id=18]
 animation = "fire_idle"
 
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "fire_look_up"
+
 [sub_resource type="AnimationNodeAnimation" id=24]
 animation = "fire_run"
 
@@ -27,6 +30,9 @@ animation = "ice_frozen"
 
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "ice_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "ice_look_down"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
 animation = "ice_run"
@@ -65,6 +71,14 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+
 [sub_resource type="AnimationNodeStateMachine" id=2]
 states/default/node = SubResource( 19 )
 states/default/position = Vector2( 698.4, -55.888 )
@@ -72,6 +86,8 @@ states/fire_death/node = SubResource( 27 )
 states/fire_death/position = Vector2( 914.4, 235 )
 states/fire_idle/node = SubResource( 18 )
 states/fire_idle/position = Vector2( 914.4, 84 )
+states/fire_look_up/node = SubResource( 41 )
+states/fire_look_up/position = Vector2( 1057.1, -13.152 )
 states/fire_run/node = SubResource( 24 )
 states/fire_run/position = Vector2( 1239.4, 84 )
 states/fire_turn/node = SubResource( 28 )
@@ -80,13 +96,15 @@ states/ice_frozen/node = SubResource( 11 )
 states/ice_frozen/position = Vector2( 337, 235 )
 states/ice_idle/node = SubResource( 8 )
 states/ice_idle/position = Vector2( 337, 84 )
+states/ice_look_down/node = SubResource( 42 )
+states/ice_look_down/position = Vector2( 12.3749, 117.768 )
 states/ice_run/node = SubResource( 9 )
 states/ice_run/position = Vector2( 673, 84 )
 states/ice_turn/node = SubResource( 29 )
 states/ice_turn/position = Vector2( 673, 235 )
-transitions = [ "ice_idle", "ice_run", SubResource( 10 ), "ice_run", "ice_frozen", SubResource( 13 ), "ice_frozen", "ice_idle", SubResource( 14 ), "ice_run", "ice_idle", SubResource( 16 ), "default", "ice_idle", SubResource( 20 ), "default", "fire_idle", SubResource( 21 ), "fire_idle", "fire_run", SubResource( 25 ), "fire_run", "fire_idle", SubResource( 26 ), "ice_run", "ice_turn", SubResource( 30 ), "fire_run", "fire_turn", SubResource( 32 ), "fire_run", "fire_death", SubResource( 34 ), "fire_idle", "fire_death", SubResource( 35 ), "ice_turn", "ice_run", SubResource( 39 ), "fire_turn", "fire_run", SubResource( 40 ) ]
+transitions = [ "ice_idle", "ice_run", SubResource( 10 ), "ice_run", "ice_frozen", SubResource( 13 ), "ice_frozen", "ice_idle", SubResource( 14 ), "ice_run", "ice_idle", SubResource( 16 ), "default", "ice_idle", SubResource( 20 ), "default", "fire_idle", SubResource( 21 ), "fire_idle", "fire_run", SubResource( 25 ), "fire_run", "fire_idle", SubResource( 26 ), "ice_run", "ice_turn", SubResource( 30 ), "fire_run", "fire_turn", SubResource( 32 ), "fire_run", "fire_death", SubResource( 34 ), "fire_idle", "fire_death", SubResource( 35 ), "ice_turn", "ice_run", SubResource( 39 ), "fire_turn", "fire_run", SubResource( 40 ), "ice_idle", "ice_look_down", SubResource( 43 ), "ice_look_down", "ice_idle", SubResource( 44 ), "fire_idle", "fire_look_up", SubResource( 45 ), "fire_look_up", "fire_idle", SubResource( 46 ) ]
 start_node = "default"
-graph_offset = Vector2( 227.099, 20.768 )
+graph_offset = Vector2( -308.565, -75.776 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -102,7 +120,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 6 ]
+"values": [ 7 ]
 }
 
 [sub_resource type="Animation" id=22]
@@ -118,12 +136,12 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 6 ]
+"values": [ 7 ]
 }
 
 [sub_resource type="Animation" id=36]
 resource_name = "fire_death"
-length = 0.65
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -131,15 +149,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 14, 15, 16, 17, 18, 19, 20 ]
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 16, 17, 18, 19 ]
 }
 
 [sub_resource type="Animation" id=5]
 resource_name = "fire_idle"
-length = 0.65
+length = 0.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -148,15 +166,32 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 21, 22, 23, 24, 25, 26, 21 ]
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "fire_look_up"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 8, 9, 10, 11 ]
 }
 
 [sub_resource type="Animation" id=23]
 resource_name = "fire_run"
-length = 0.6
+length = 0.3
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -164,15 +199,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 7, 8, 9, 10, 11, 12 ]
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4, 5, 6, 12 ]
 }
 
 [sub_resource type="Animation" id=37]
 resource_name = "fire_turn"
-length = 0.7
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -180,15 +215,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 28, 29, 30, 31, 32, 33, 34 ]
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3 ]
 }
 
 [sub_resource type="Animation" id=15]
 resource_name = "ice_frozen"
-length = 0.6
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -196,15 +231,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 42, 43, 44, 45, 46, 47 ]
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 32, 33, 34 ]
 }
 
 [sub_resource type="Animation" id=6]
 resource_name = "ice_idle"
-length = 0.65
+length = 0.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -213,15 +248,31 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 49, 50, 51, 52, 53, 54, 49 ]
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "ice_look_down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 28, 29, 30, 31 ]
 }
 
 [sub_resource type="Animation" id=7]
 resource_name = "ice_run"
-length = 0.6
+length = 0.3
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -230,15 +281,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 35, 36, 37, 38, 39, 40 ]
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 24, 25, 26 ]
 }
 
 [sub_resource type="Animation" id=38]
 resource_name = "ice_turn"
-length = 0.7
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -246,10 +297,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 63, 64, 65, 66, 67, 68, 69 ]
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 36, 37, 38, 39 ]
 }
 
 [node name="Player" type="KinematicBody2D"]
@@ -258,9 +309,9 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -2, -4 )
 texture = ExtResource( 1 )
-hframes = 7
+hframes = 4
 vframes = 10
-frame = 6
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -282,10 +333,12 @@ anims/RESET = SubResource( 4 )
 anims/default = SubResource( 22 )
 anims/fire_death = SubResource( 36 )
 anims/fire_idle = SubResource( 5 )
+anims/fire_look_up = SubResource( 47 )
 anims/fire_run = SubResource( 23 )
 anims/fire_turn = SubResource( 37 )
 anims/ice_frozen = SubResource( 15 )
 anims/ice_idle = SubResource( 6 )
+anims/ice_look_down = SubResource( 48 )
 anims/ice_run = SubResource( 7 )
 anims/ice_turn = SubResource( 38 )
 
