@@ -22,8 +22,15 @@ export var whichPlayer = "ice"		# players are ice by default
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 onready var tween = $Tween
 
+var frozen = preload("res://assets/audio/frozen.wav")
+var swish = preload("res://assets/audio/swish.wav")
+var impact = preload("res://assets/audio/impact.wav")
+
+onready var sfx = $sfx
+
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+	
 	if !Global.splitscreen:
 		add_inputs()
 
@@ -68,6 +75,12 @@ func _physics_process(delta):
 		var is_running = is_on_floor() and not is_zero_approx(_velocity.x)
 		var is_launched = player_state == "launched"
 		var is_sliding = player_state == "sliding"
+		var is_looking_up = Input.is_action_just_released("ui_up")
+		var is_looking_down = Input.is_action_just_released("ui_down")
+		
+		print(is_looking_up)
+		print(is_looking_down)
+		
 
 		var _horizontal_direction = (
 			Input.get_action_strength("right" + str(controller_index))
@@ -75,6 +88,7 @@ func _physics_process(delta):
 		)
 		
 		_velocity.y += GRAVITY * delta 		# jump
+		
 		
 		if is_sliding:
 			if whichPlayer:
@@ -92,6 +106,15 @@ func _physics_process(delta):
 		else:
 			_velocity.x = _horizontal_direction * SPEED
 			
+			# LOOK UP AND DOWN ANIMATIONS
+#			if is_looking_down:
+#				if whichPlayer == 'ice':
+#					state_machine.travel("ice_look_down")
+#
+#			if is_looking_up:
+#				if whichPlayer == 'fire':
+#					state_machine.travel("fire_look_up")
+			
 			if _horizontal_direction > 0:
 				rpc_unreliable("update_animation_move_right", Animation)
 				if whichPlayer == "ice":
@@ -105,7 +128,10 @@ func _physics_process(delta):
 				elif is_launched:
 					_velocity.y = -JUMP_FORCE + abs(_velocity.y)/2
 				elif is_jump_cancelled:
+#					sfx.stream = impact
+#					sfx.play()
 					_velocity.y = 0.0
+					
 					
 			elif _horizontal_direction < 0:
 				rpc_unreliable("update_animation_move_left", Animation)
@@ -158,6 +184,9 @@ func _on_launcher_exited(body_rid, body, body_shape_index, local_shape_index):
 func _on_ice_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body is KinematicBody2D:
 		body.player_state = "sliding"
+		if !sfx.is_playing():
+			sfx.stream = frozen
+			sfx.play()
 
 
 func _on_ice_exited(body_rid, body, body_shape_index, local_shape_index):

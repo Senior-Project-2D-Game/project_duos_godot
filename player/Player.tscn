@@ -104,7 +104,7 @@ states/ice_turn/node = SubResource( 29 )
 states/ice_turn/position = Vector2( 673, 235 )
 transitions = [ "ice_idle", "ice_run", SubResource( 10 ), "ice_run", "ice_frozen", SubResource( 13 ), "ice_frozen", "ice_idle", SubResource( 14 ), "ice_run", "ice_idle", SubResource( 16 ), "default", "ice_idle", SubResource( 20 ), "default", "fire_idle", SubResource( 21 ), "fire_idle", "fire_run", SubResource( 25 ), "fire_run", "fire_idle", SubResource( 26 ), "ice_run", "ice_turn", SubResource( 30 ), "fire_run", "fire_turn", SubResource( 32 ), "fire_run", "fire_death", SubResource( 34 ), "fire_idle", "fire_death", SubResource( 35 ), "ice_turn", "ice_run", SubResource( 39 ), "fire_turn", "fire_run", SubResource( 40 ), "ice_idle", "ice_look_down", SubResource( 43 ), "ice_look_down", "ice_idle", SubResource( 44 ), "fire_idle", "fire_look_up", SubResource( 45 ), "fire_look_up", "fire_idle", SubResource( 46 ) ]
 start_node = "default"
-graph_offset = Vector2( -308.565, -75.776 )
+graph_offset = Vector2( 63.8275, -105.776 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -341,5 +341,8 @@ anims/ice_idle = SubResource( 6 )
 anims/ice_look_down = SubResource( 48 )
 anims/ice_run = SubResource( 7 )
 anims/ice_turn = SubResource( 38 )
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+volume_db = -4.755
 
 [connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]
