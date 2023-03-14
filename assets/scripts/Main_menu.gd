@@ -1,6 +1,6 @@
 extends Node2D
 var net_config = "res://scenes/Network_Setup.tscn"
-var splitscreen_config = "res://scenes/Splitscreen_Setup.tscn"
+var splitscreen_config = "res://scenes/CharacterSelect.tscn"
 
 
 func _on_Splitscreen_Btn_pressed():

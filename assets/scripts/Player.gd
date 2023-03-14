@@ -12,7 +12,12 @@ var _velocity = Vector2.ZERO
 var state_machine
 var spawn = Vector2.ZERO
 export var controller_index = 1
-var controls = {"left" : 14, "right"  : 15, "jump" : 0, "pause" : 1}
+var controls = {
+	"left" : [["button", 14], ["motion", JOY_AXIS_0, "left"]],
+	"right" : [["button", 15], ["motion", JOY_AXIS_0, "right"]],
+	"jump" : [["button", 0]], "pause" : [["button", 1]]
+}
+var kb_controls = {"left": KEY_A, "right": KEY_D, "jump": KEY_SPACE, "pause": KEY_ESCAPE}
 export var whichPlayer = "ice"		# players are ice by default
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 onready var tween = $Tween
@@ -25,16 +30,33 @@ func _ready():
 func add_inputs():
 	var ev
 	var action
-	for action_name in controls:
-		action = action_name + str(controller_index)
-		if not InputMap.has_action(action):
-			InputMap.add_action(action)
+	if typeof(controller_index) == TYPE_STRING:
+		for action_name in kb_controls:
+			action = action_name + str(controller_index)
+			if not InputMap.has_action(action):
+				InputMap.add_action(action)
+			ev = InputEventKey.new()
+			ev.scancode = kb_controls[action_name]
+			InputMap.action_add_event(action, ev)
 			
-		ev = InputEventJoypadButton.new()
-		ev.button_index = controls[action_name]
-		ev.set_device(controller_index)
-		InputMap.action_add_event(action, ev)
-		print(InputMap.get_action_list(action)) 
+	else:
+		for action_name in controls:
+			action = action_name + str(controller_index)
+			if not InputMap.has_action(action):
+				InputMap.add_action(action)
+			for key in controls[action_name]:
+				if key[0] == "button":
+					ev = InputEventJoypadButton.new()
+					ev.button_index = key[1]
+				elif key[0] == "motion":
+					ev = InputEventJoypadMotion.new()
+					ev.set_axis(key[1])
+					if key[2] == "left":
+						ev.set_axis_value(-1.0)
+					else:
+						ev.set_axis_value(1.0)
+				ev.set_device(controller_index)
+				InputMap.action_add_event(action, ev)
 
 func _physics_process(delta):
 	if Global.splitscreen or is_network_master():
@@ -56,7 +78,7 @@ func _physics_process(delta):
 		
 		if is_sliding:
 			if whichPlayer:
-				rpc_unreliable("update_animation_frozen", Animation)				
+				rpc_unreliable("update_animation_frozen", Animation)
 				state_machine.travel("ice_frozen")
 			
 			if _velocity.x != 0:
@@ -71,11 +93,11 @@ func _physics_process(delta):
 			_velocity.x = _horizontal_direction * SPEED
 			
 			if _horizontal_direction > 0:
-				rpc_unreliable("update_animation_move_right", Animation)				
+				rpc_unreliable("update_animation_move_right", Animation)
 				if whichPlayer == "ice":
 					state_machine.travel("ice_run")
 				elif whichPlayer == "fire":
-					state_machine.travel("fire_run")	
+					state_machine.travel("fire_run")
 				$Sprite.flip_h = false
 				
 				if is_jumping:
@@ -86,12 +108,12 @@ func _physics_process(delta):
 					_velocity.y = 0.0
 					
 			elif _horizontal_direction < 0:
-				rpc_unreliable("update_animation_move_left", Animation)		
+				rpc_unreliable("update_animation_move_left", Animation)
 				if whichPlayer == "ice":
 					state_machine.travel("ice_run")
 				elif whichPlayer == "fire":
-					state_machine.travel("fire_run")			
-				$Sprite.flip_h = true								
+					state_machine.travel("fire_run")
+				$Sprite.flip_h = true
 				
 				if is_jumping:
 					_velocity.y = -JUMP_FORCE
@@ -104,7 +126,7 @@ func _physics_process(delta):
 				if whichPlayer == "ice":
 					state_machine.travel("ice_idle")
 				elif whichPlayer == "fire":
-					state_machine.travel("fire_idle")	
+					state_machine.travel("fire_idle")
 				
 				if is_jumping:
 					_velocity.y = -JUMP_FORCE
@@ -147,15 +169,15 @@ remote func update_animation_move_left(animation):
 	if whichPlayer == "ice":
 		state_machine.travel("ice_run")
 	elif whichPlayer == "fire":
-		state_machine.travel("fire_run")		
-	$Sprite.flip_h = true		
+		state_machine.travel("fire_run")
+	$Sprite.flip_h = true
 							
 remote func update_animation_move_right(animation):
 	if whichPlayer == "ice":
 		state_machine.travel("ice_run")
 	elif whichPlayer == "fire":
-		state_machine.travel("fire_run")	
-	$Sprite.flip_h = false		
+		state_machine.travel("fire_run")
+	$Sprite.flip_h = false
 	
 remote func update_animation_stop(animation):
 	if whichPlayer == "ice":

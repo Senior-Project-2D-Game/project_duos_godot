@@ -1,6 +1,7 @@
 extends Node
 
 export var splitscreen = false
+export var selectPos = [null, null]
 
 
 func instance_node_at_location(node: Object, parent: Object, location: Vector2):
