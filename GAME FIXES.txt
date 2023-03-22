@@ -1,0 +1,32 @@
+GAME FIXES
+
+- Reduce movement speed
+--- Return Button
+- Completion Mechanism
+- Camera focus width
+- Look up and look down
+--- Adjust death field
+- Adjust geyser animation
+- Decrease end-tunnel size
+--- Update Character select screen (distinguish sides)
+- Add a How to Manual
+---- Fix screen tears
+- Melt the wall on any side 
+	- maybe add a "breath fire button"
+- 
+
+POSSIBLE IDEAS
+
+- Second Level (competitive run) -- Time based
+- Connect the 1st level to the next
+- Ability to map your own buttons
+- Add a story/exposition to catch user attention
+- Add a goal
+- Button switch char*
+-
+
+CURRENT DELIVERIES
+
+- A level completion screen
+- In-game sounds attached to actions
+- Completed music choices
