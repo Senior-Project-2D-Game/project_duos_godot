@@ -8,6 +8,7 @@ onready var device_ip_address = $CanvasLayer/device_ip
 onready var start_game = $CanvasLayer/Start
 
 var main_level = "res://scenes/Levels/Fire Ice Level.tscn"
+var main_menu = "res://scenes/Main_menu.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -75,3 +76,6 @@ func _on_Start_Btn_pressed():
 
 func _on_set_to_local_pressed():
 	server_ip_address.text = "127.0.0.1"
+
+func _on_ReturnBtn_pressed():
+	get_tree().change_scene(main_menu)

@@ -78,8 +78,8 @@ func _physics_process(delta):
 		var is_looking_up = Input.is_action_just_released("ui_up")
 		var is_looking_down = Input.is_action_just_released("ui_down")
 		
-		print(is_looking_up)
-		print(is_looking_down)
+#		print(is_looking_up)
+#		print(is_looking_down)
 		
 
 		var _horizontal_direction = (

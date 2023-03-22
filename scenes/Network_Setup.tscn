@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/scripts/Network_setup.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=2]
@@ -31,13 +31,14 @@ font_data = ExtResource( 2 )
 size = 24
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 2 )
+
 [node name="Network_Setup" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1024.0
@@ -177,8 +178,23 @@ custom_fonts/font = SubResource( 7 )
 text = "START GAME"
 align = 1
 
+[node name="ReturnBtn" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 208.0
+margin_bottom = 72.0
+
+[node name="Label" type="Label" parent="ReturnBtn"]
+margin_left = 48.0
+margin_top = 8.0
+margin_right = 144.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 8 )
+text = "GO BACK"
+
 [connection signal="pressed" from="Multiplayer_config/Host_Server" to="." method="_on_Host_Server_pressed"]
 [connection signal="pressed" from="Multiplayer_config/set_to_local" to="." method="_on_set_to_local_pressed"]
 [connection signal="pressed" from="Multiplayer_config/Join_Server" to="." method="_on_Join_Server_pressed"]
-[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Host_Server_pressed"]
 [connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Start_Btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Host_Server_pressed"]
+[connection signal="pressed" from="ReturnBtn" to="." method="_on_ReturnBtn_pressed"]

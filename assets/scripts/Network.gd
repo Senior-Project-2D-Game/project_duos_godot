@@ -16,7 +16,7 @@ func _ready():
 	else:
 		ip_address = IP.get_local_addresses()[0]
 
-	print(IP.get_local_addresses())
+#	print(IP.get_local_addresses())
 	for ip in IP.get_local_addresses():
 		if ip.begins_with('192.168.') and not ip.ends_with('.1'):
 			ip_address = ip 

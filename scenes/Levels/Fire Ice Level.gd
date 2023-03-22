@@ -32,7 +32,7 @@ func _ready():
 	players["1"].player = player_arr[0]
 	players["2"].player = player_arr[1]
 	players["2"].player.whichPlayer = "fire"	# changes second player animation 
-#	print(players["2"].player.whichPlayer)
+	#	print(players["2"].player.whichPlayer)	DEBUG WHICH PLAYER IS WHICH
 	
 	var ice = $"VBoxContainer/ViewportContainer/Viewport/Level/Ice"
 	ice.connect("body_shape_entered", players["1"].player,"_on_ice_entered")

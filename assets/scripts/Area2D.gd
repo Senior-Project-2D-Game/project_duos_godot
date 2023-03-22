@@ -10,4 +10,6 @@ func _on_Death_Collides_body_shape_entered(body_rid, body, body_shape_index, loc
 		body.position = body.spawn
 		
 
-
+func _on_CompletionCollider_body_entered(body):
+	if body is KinematicBody2D:
+		print(body.name + "Level Complete")
