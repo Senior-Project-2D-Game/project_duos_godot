@@ -3,7 +3,7 @@ extends KinematicBody2D
 class_name Player
 
 const GRAVITY = 600.0
-const SPEED = 200
+const SPEED = 150
 const JUMP_FORCE = 300
 const UP_DIRECTION = Vector2.UP
 var player_state = "normal"
@@ -75,11 +75,8 @@ func _physics_process(delta):
 		var is_running = is_on_floor() and not is_zero_approx(_velocity.x)
 		var is_launched = player_state == "launched"
 		var is_sliding = player_state == "sliding"
-		var is_looking_up = Input.is_action_just_released("ui_up")
+		var is_looking_up = Input.is_action_pressed("ui_up")
 		var is_looking_down = Input.is_action_just_released("ui_down")
-		
-#		print(is_looking_up)
-#		print(is_looking_down)
 		
 
 		var _horizontal_direction = (
@@ -107,9 +104,9 @@ func _physics_process(delta):
 			_velocity.x = _horizontal_direction * SPEED
 			
 			# LOOK UP AND DOWN ANIMATIONS
-#			if is_looking_down:
-#				if whichPlayer == 'ice':
-#					state_machine.travel("ice_look_down")
+#			if whichPlayer == 'fire':
+#				if Input.is_action_pressed("ui_down"):
+#					state_machine.travel("fire_look_up")
 #
 #			if is_looking_up:
 #				if whichPlayer == 'fire':

@@ -123,6 +123,7 @@ position = Vector2( 791, 329 )
 scale = Vector2( 5.25, 5.25 )
 frames = SubResource( 3 )
 animation = "fire"
+frame = 1
 speed_scale = 1.5
 playing = true
 flip_h = true
@@ -132,7 +133,6 @@ position = Vector2( 244, 328 )
 scale = Vector2( 5.25, 5.25 )
 frames = SubResource( 3 )
 animation = "ice"
-frame = 3
 speed_scale = 1.5
 playing = true
 

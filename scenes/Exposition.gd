@@ -13,15 +13,18 @@ var joy_controls = load("res://assets/sprites/joy_controls.tscn")
 func _ready():
 	dialogue1.show()
 	
-	$AnimationPlayer.play("default")
-	yield($AnimationPlayer, "animation_finished")
-	playDialogue2()
-	$portal.show()
-	yield($AnimationPlayer, "animation_finished")
-	playDialogue3()
-	yield($AnimationPlayer, "animation_finished")
-	playDialogue4()
-	yield($AnimationPlayer, "animation_finished")
+	if Input.is_action_pressed("ui_accept"):
+		$Continue.show()
+	else:	
+		$AnimationPlayer.play("default")
+		yield($AnimationPlayer, "animation_finished")
+		playDialogue2()
+		$portal.show()
+		yield($AnimationPlayer, "animation_finished")
+		playDialogue3()
+		yield($AnimationPlayer, "animation_finished")
+		playDialogue4()
+		yield($AnimationPlayer, "animation_finished")
 	
 	$Continue.show()
 	if Input.is_action_pressed("ui_accept"):
