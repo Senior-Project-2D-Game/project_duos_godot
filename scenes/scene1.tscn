@@ -378,7 +378,7 @@ __meta__ = {
 position = Vector2( -1, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 26 )
-frame = 6
+frame = 4
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Launcher"]
@@ -392,7 +392,6 @@ __meta__ = {
 position = Vector2( 0, 27 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 26 )
-frame = 2
 playing = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Launcher"]
@@ -406,7 +405,7 @@ __meta__ = {
 position = Vector2( -6.10352e-05, 10 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 26 )
-frame = 13
+frame = 11
 playing = true
 
 [node name="Ice" type="Area2D" parent="."]
@@ -497,6 +496,7 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -851874, -2147483647, 131075, -851873, 1, 131073, -851872, -1610612735, 131075, -786338, -1073741823, 131073, -786337, -1073741823, 131072, -786336, -1610612735, 131073, -720802, -1073741823, 131073, -720801, -1073741823, 131074, -720800, -1610612735, 131073, -655266, -1073741823, 131073, -655265, -1610612735, 131074, -655264, -1610612735, 131073, -589730, -1073741823, 131073, -589729, -1073741823, 131074, -589728, -1610612735, 131073, -524194, -1073741823, 131073, -524193, -1073741823, 131072, -524192, -1610612735, 131073, -458658, -1073741823, 131073, -458657, -1073741823, 131072, -458656, -1610612735, 131073, -393122, -1073741823, 131073, -393121, -1073741823, 131074, -393120, -1610612735, 131073, -327586, -1073741823, 131073, -327585, -1610612735, 131074, -327584, -1610612735, 131073, -262050, -1073741823, 131073, -262049, -1073741823, 131074, -262048, -1610612735, 131073, -196514, -1073741823, 131073, -196513, -1073741823, 131072, -196512, -1610612735, 131073, -130978, -1073741823, 131073, -130977, -1073741823, 2, -130976, -1610612735, 131073, -65442, -1073741823, 131073, -65441, -1073741823, 0, -65440, -1610612735, 131073 )
+
 [connection signal="body_shape_entered" from="Launcher" to="Player" method="_on_launcher_entered"]
 [connection signal="body_shape_exited" from="Launcher" to="Player" method="_on_launcher_exited"]
 [connection signal="body_shape_entered" from="Ice" to="Player" method="_on_ice_entered"]

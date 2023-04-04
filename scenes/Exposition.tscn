@@ -1,0 +1,292 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://assets/fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/animations/ice_idle/ice_fram3.png" type="Texture" id=2]
+[ext_resource path="res://assets/animations/fire_idle/fram4.png" type="Texture" id=3]
+[ext_resource path="res://assets/animations/ice_idle/ice_fram4.png" type="Texture" id=4]
+[ext_resource path="res://assets/animations/fire_idle/fram3.png" type="Texture" id=5]
+[ext_resource path="res://assets/animations/fire_idle/fram1.png" type="Texture" id=6]
+[ext_resource path="res://assets/animations/fire_idle/fram2.png" type="Texture" id=7]
+[ext_resource path="res://assets/animations/ice_idle/ice_fram1.png" type="Texture" id=8]
+[ext_resource path="res://assets/animations/ice_idle/ice_fram2.png" type="Texture" id=9]
+[ext_resource path="res://scenes/Exposition.gd" type="Script" id=10]
+[ext_resource path="res://assets/animations/portal.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label2:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label3:percent_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label4:percent_visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "default"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "label2"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label2:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "label3"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label3:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "label4"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label4:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "fire",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "ice",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 11 )
+region = Rect2( 512, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 11 )
+region = Rect2( 1024, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 11 )
+region = Rect2( 1536, 0, 512, 512 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.0901961, 0.0784314, 0.0784314, 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 964.0
+margin_bottom = 792.0
+custom_fonts/font = SubResource( 1 )
+text = "Marco and Polo were sick of being stuck in one place.
+They lived in a massive, ever-expanding pixel-bit verse but had only seen the 4 corners of their low-quality living room (They didn't have Netflix). 
+They wished for a way out and the developers gladly obliged..."
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 216.0
+margin_right = 964.0
+margin_bottom = 816.0
+custom_fonts/font = SubResource( 1 )
+text = "A massive, fractured portal was opened and with it the promise of endless adventure, but it came at a steep price. Their connection, their friendship, their brotherhood had to be severed for them to pass through the fractured portal."
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+percent_visible = 0.0
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+margin_left = 56.0
+margin_top = 200.0
+margin_right = 956.0
+margin_bottom = 800.0
+custom_fonts/font = SubResource( 1 )
+text = "
+Before they embarked on this adventure, they promised each other that no matter the distance, terrain, or what the devs cook up with Godot and Aseprite, they will help each other and find each other."
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+percent_visible = 0.0
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 240.0
+margin_right = 964.0
+margin_bottom = 840.0
+custom_fonts/font = SubResource( 1 )
+text = "This. Is. Du-OS"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+percent_visible = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/default = SubResource( 3 )
+anims/label2 = SubResource( 4 )
+anims/label3 = SubResource( 5 )
+anims/label4 = SubResource( 6 )
+
+[node name="fire_char" type="AnimatedSprite" parent="."]
+position = Vector2( 799, 260.375 )
+scale = Vector2( 5.25, 5.25 )
+frames = SubResource( 7 )
+animation = "fire"
+frame = 1
+speed_scale = 1.5
+playing = true
+flip_h = true
+
+[node name="ice_char" type="AnimatedSprite" parent="."]
+position = Vector2( 252, 259.375 )
+scale = Vector2( 5.25, 5.25 )
+frames = SubResource( 7 )
+animation = "ice"
+speed_scale = 1.5
+playing = true
+
+[node name="portal" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 512, 240 )
+scale = Vector2( 0.546875, 0.546875 )
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
+[node name="Continue" type="Button" parent="."]
+visible = false
+margin_left = 768.0
+margin_top = 504.0
+margin_right = 992.0
+margin_bottom = 552.0
+
+[node name="Label" type="Label" parent="Continue"]
+margin_left = 56.0
+margin_top = 8.0
+margin_right = 160.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 8 )
+text = "CONTINUE"
+align = 1
+valign = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
