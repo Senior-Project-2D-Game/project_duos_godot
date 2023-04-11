@@ -93,11 +93,25 @@ text = "SPLITSCREEN"
 align = 1
 valign = 1
 
+[node name="Tutorial_Btn" type="Button" parent="Main_menu"]
+margin_left = 400.0
+margin_top = 336.0
+margin_right = 624.0
+margin_bottom = 413.0
+
+[node name="Label" type="Label" parent="Main_menu/Tutorial_Btn"]
+margin_right = 224.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 1 )
+text = "Tutorial"
+align = 1
+valign = 1
+
 [node name="Online_Btn" type="Button" parent="Main_menu"]
 margin_left = 400.0
-margin_top = 360.0
+margin_top = 440.0
 margin_right = 624.0
-margin_bottom = 437.0
+margin_bottom = 517.0
 
 [node name="Label" type="Label" parent="Main_menu/Online_Btn"]
 margin_right = 224.0
@@ -123,7 +137,7 @@ position = Vector2( 791, 329 )
 scale = Vector2( 5.25, 5.25 )
 frames = SubResource( 3 )
 animation = "fire"
-frame = 1
+frame = 2
 speed_scale = 1.5
 playing = true
 flip_h = true
@@ -133,6 +147,7 @@ position = Vector2( 244, 328 )
 scale = Vector2( 5.25, 5.25 )
 frames = SubResource( 3 )
 animation = "ice"
+frame = 1
 speed_scale = 1.5
 playing = true
 
@@ -146,4 +161,5 @@ anims/RESET = SubResource( 4 )
 anims/default = SubResource( 5 )
 
 [connection signal="pressed" from="Main_menu/Splitscreen_Btn" to="." method="_on_Splitscreen_Btn_pressed"]
+[connection signal="pressed" from="Main_menu/Tutorial_Btn" to="." method="_on_Tutorial_Btn_pressed"]
 [connection signal="pressed" from="Main_menu/Online_Btn" to="." method="_on_Online_Btn_pressed"]

@@ -12,6 +12,7 @@ var main_menu = "res://scenes/Main_menu.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.splitscreen = false
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")	
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
