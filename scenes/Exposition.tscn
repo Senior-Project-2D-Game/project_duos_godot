@@ -250,7 +250,7 @@ position = Vector2( 799, 260.375 )
 scale = Vector2( 5.25, 5.25 )
 frames = SubResource( 7 )
 animation = "fire"
-frame = 2
+frame = 3
 speed_scale = 1.5
 playing = true
 flip_h = true
@@ -260,7 +260,7 @@ position = Vector2( 252, 259.375 )
 scale = Vector2( 5.25, 5.25 )
 frames = SubResource( 7 )
 animation = "ice"
-frame = 1
+frame = 2
 speed_scale = 1.5
 playing = true
 
@@ -269,6 +269,7 @@ visible = false
 position = Vector2( 512, 240 )
 scale = Vector2( 0.546875, 0.546875 )
 frames = SubResource( 13 )
+frame = 3
 playing = true
 
 [node name="Continue" type="Button" parent="."]

@@ -28,16 +28,10 @@ func _ready():
 	player_instance.z_index = 0
 
 
-	$AnimationPlayer.play("key_move1")
-	yield($AnimationPlayer, "animation_finished")
-	playDialogue2()
-	yield($AnimationPlayer, "animation_finished")
-	playDialogue3()
-	yield($AnimationPlayer, "animation_finished")
-	playDialogue4()
-	yield($AnimationPlayer, "animation_finished")	
-	playDialogue5()
-	yield($AnimationPlayer, "animation_finished")
+
+#	yield($AnimationPlayer, "animation_finished")
+#	playDialogue3()
+
 	# continues to game if Enter or Space is pressed
 	
 func playDialogue2():
@@ -70,3 +64,19 @@ func _input(event):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	return true
+
+
+func _on_JumpDialog_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	playDialogue3()
+
+
+func _on_EnterDialog_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	$AnimationPlayer.play("key_move1")
+	yield($AnimationPlayer, "animation_finished")
+	playDialogue2()	
+
+
+func _on_CheckpointDialog_body_entered(body):
+	playDialogue4()
+	yield($AnimationPlayer, "animation_finished")	
+	playDialogue5()
