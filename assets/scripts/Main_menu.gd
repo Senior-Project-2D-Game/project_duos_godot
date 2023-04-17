@@ -6,6 +6,8 @@ var tutorial = "res://scenes/Tutorial.tscn"
 
 func _ready():
 	$AnimationPlayer.play("default")
+	Global.reset_game()
+
 
 func _on_Splitscreen_Btn_pressed():
 	get_tree().change_scene(splitscreen_config)

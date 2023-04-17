@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/main_scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PauseMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Levels/Fire Ice Level.gd" type="Script" id=3]
+[ext_resource path="res://assets/scripts/Stopwatch.gd" type="Script" id=4]
 
 [node name="Fire Ice Level" type="Node2D"]
 script = ExtResource( 3 )
@@ -83,3 +84,10 @@ color = Color( 0.14902, 0.137255, 0.137255, 0.807843 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="."]
+margin_left = 901.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 42.0
+script = ExtResource( 4 )

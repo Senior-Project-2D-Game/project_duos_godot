@@ -47,10 +47,10 @@ texture = ExtResource( 4 )
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
-margin_left = 256.0
-margin_top = 60.0
-margin_right = 768.0
-margin_bottom = 137.0
+margin_left = 254.0
+margin_top = 100.0
+margin_right = 766.0
+margin_bottom = 177.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "CHARACTER SELECT"
@@ -73,29 +73,28 @@ align = 1
 valign = 1
 
 [node name="fire_char" type="AnimatedSprite" parent="."]
-position = Vector2( 791, 374 )
-scale = Vector2( 5.25, 5.25 )
+position = Vector2( 791, 144 )
+scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 3 )
 animation = "fire"
-frame = 2
+frame = 1
 speed_scale = 1.5
 playing = true
 flip_h = true
 
 [node name="ice_char" type="AnimatedSprite" parent="."]
-position = Vector2( 249, 375 )
-scale = Vector2( 5.25, 5.25 )
+position = Vector2( 223, 139 )
+scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 3 )
 animation = "ice"
-frame = 1
 speed_scale = 1.5
 playing = true
 
 [node name="ReturnBtn" type="Button" parent="."]
-margin_left = 46.0
-margin_top = 46.0
-margin_right = 211.0
-margin_bottom = 93.0
+margin_left = 22.0
+margin_top = 23.0
+margin_right = 187.0
+margin_bottom = 70.0
 
 [node name="Label" type="Label" parent="ReturnBtn"]
 margin_left = 32.0
