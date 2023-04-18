@@ -1,6 +1,7 @@
 extends Node2D
 
 var player = preload("res://player/Player.tscn")
+var ingame = preload("res://assets/audio/in_game1.wav")
 
 onready var players := {
 	"1": {
@@ -47,3 +48,6 @@ func _ready():
 		var remote_transform := RemoteTransform2D.new()
 		remote_transform.remote_path = node.camera.get_path()
 		node.player.add_child(remote_transform)
+
+	$SFX.stream = ingame
+	$SFX.play()

@@ -343,6 +343,5 @@ anims/ice_run = SubResource( 7 )
 anims/ice_turn = SubResource( 38 )
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
-volume_db = -4.755
 
 [connection signal="timeout" from="network_tick_rate" to="." method="_on_network_tick_rate_timeout"]

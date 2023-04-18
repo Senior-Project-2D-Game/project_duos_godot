@@ -11,7 +11,7 @@ onready var dialogue4 = $Label3
 onready var dialogue5 = $Label5
 
 func _ready():
-	print(self.get_children())
+#	print(self.get_children())
 	
 	Global.splitscreen = true
 	player_instance.controller_index = "keyboard"

@@ -62,7 +62,6 @@ RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 Network="*res://assets/scripts/Network.gd"
 Global="*res://assets/scripts/Global.gd"
 Players="*res://Players.tscn"
-BgMusic="*res://bg_music.tscn"
 
 [debug]
 

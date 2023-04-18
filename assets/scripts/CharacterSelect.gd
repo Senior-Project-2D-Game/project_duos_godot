@@ -24,8 +24,8 @@ func _ready():
 func _process(delta):
 	if Global.selectPos[0] != null and Global.selectPos[1] != null:
 		$ContinueBtn.show()
-		if Input.is_action_pressed("ui_accept"):
-			_on_ContinueBtn_pressed()		# continues to game if Enter or Space is pressed
+#		if Input.is_action_pressed("ui_accept"):
+#			_on_ContinueBtn_pressed()		# continues to game if Enter or Space is pressed
 	else:
 		$ContinueBtn.hide()
 
